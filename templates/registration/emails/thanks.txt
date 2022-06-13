@@ -1,0 +1,7 @@
+<p>{{name}}, Welcome to Hāsh</p>
+
+
+<p>Account has been verified, Now share most of your work and passion to the world.</p>
+<p>{{ username }}</p>
+<p>Thank you,</p>
+<p>Hāsh</p>

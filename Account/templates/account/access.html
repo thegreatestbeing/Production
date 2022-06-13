@@ -1,0 +1,499 @@
+{% extends "base.html" %}
+
+{% load humanize %}
+{% load static %}
+
+{% block title %}
+Create account | Hash Business
+{% endblock %}
+
+{% block body %}
+	{% block content %}
+		<div class="container-v02">
+			<div class="stacks">
+				<div class="info stack">
+					<div class="logo">
+						<div class="graph">
+							<img src="{% static 'fonts/hash32.png' %}" alt="" class="icon">
+						</div>
+					</div>
+					<div class="title">
+						<div class="stack">
+							<p>Hāsh Business</p>
+						</div>
+					</div>
+					<div class="subtitle">
+						<div class="stack">
+							<p>Helps you to manage your business</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="signup">
+					<div class="form">
+						<form action="" autocomplete="off">
+							<div class="title">
+								<div class="stack">
+									<p>Create account</p>
+								</div>
+							</div>
+							<div class="fields">
+								<div class="fieldset">
+									<div class="firstname" data="inputfield">
+										<div class="field">
+											<input id="first-name" type="text" name="first-name" required autocomplete="off" autofill="off"/>
+											
+
+											<label class="label" for="first-name">
+											<span class="tag">First name</span>
+											</label>
+										
+										</div>
+									</div>
+									<div class="surname" data="inputfield">
+										<div class="field">
+											<input id="surname" type="text"  autocomplete="off" name="surname" required>
+											<label class="label" for="surname">
+												<span class="tag">Surname</span>
+											</label>
+										
+										</div>
+									</div>
+								</div>
+								<div class="fieldset">
+									<div class="email" data="inputfield">
+										<div class="field">
+											<input id="email" type="email" autocomplete="off" name="email-address" required>
+										
+											<label class="label" for="email-address">
+												<span class="tag">Email address</span>
+											</label>
+										</div>
+
+									</div>
+									<div class="username" data="inputfield">
+										<div class="field">
+											<input id="username" type="text" autocomplete="off" name="username" required>
+											<label class="label" for="username">
+												<span class="tag">Username</span>
+											</label>
+										</div>
+
+									</div>
+								</div>
+								<div class="fieldset">
+									<div class="password" data="inputfield">
+										<div class="field">
+											<input id="password" type="password" name="password" autocomplete="off" required>
+											<label class="label" for="password">
+												<span class="tag">Password</span>
+											</label>
+										</div>
+
+									</div>
+									<div class="confirm" data="inputfield">
+										<div class="field">
+											<input id="confirm-password" tpye="password" name="confirm-password" autocomplete="off" required>
+											<label class="label" for="confirm-password">
+												<span class="tag">Confirm password</span>
+											</label>
+										</div>
+
+									</div>
+								</div>
+								<div class="fieldset">
+									<div class="birthdate" data="inputfield">
+										<div class="field">
+											<input id="birthdate" type="text" autocomplete="off" name="birthdate" required>
+											<label class="label" for="birthdate">
+												<span class="tag">Birthdate</span>
+											</label>
+										</div>
+
+										<div class="calandar" role="button">
+											<div class="graph">
+												<div class="icon">
+													<svg class="icon" width="16" height="16" fill="currentColor">
+														<use xlink:href="{% static 'icons/icons.svg' %}#calendar"/>
+													</svg>					
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="gender" data="inputfield" gender="male" role="switch">
+										<div id="male" class="selector male" selected="true">
+											<div class="stack" active="true">
+												<p>Male</p>
+												<div class="radio" role="button">
+													<div class="selected">
+														<active class="active"></active>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div id="female" class="selector female" selected="false">
+											<div class="stack" active="false">
+												<p>Female</p>
+												<div class="radio" role="button">
+													<div class="selected">
+
+													</div>
+												</div>
+											</div>
+										</div> 
+									</div>
+								</div>
+								<div class="fieldset buttons">
+									<div class="login" role="button">
+										<div class="stack">
+											<p><b>Login</b> Instead</p>   
+											<div class="graph">
+												<div class="icon">
+													<svg class="icon" width="16" height="16" fill="currentColor">
+														<use xlink:href="{% static 'icons/icons.svg' %}#box-arrow-in-right"/>
+													</svg>	
+												</div>
+											</div>
+										</div>
+									</div>
+				
+									<div class="done" role="button">
+										<div class="stack">
+											<p><b>Continue to signup</b></p>   
+											<div class="graph">
+												<div class="icon">
+													<svg class="icon" width="16" height="16" fill="currentColor">
+														<use xlink:href="{% static 'icons/icons.svg' %}#arrow-right"/>
+													</svg>	
+												</div>
+											</div>
+										</div>
+									</div>
+									
+								</div> 
+							</div>     
+						</form>              
+					</div>
+				</div>
+
+				<div class="conditions">
+					<div class="terms">
+						<p>By clicking Create account, you agree <b>Hāsh Business Services Terms & Conditions</b>.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	{% endblock %}
+
+
+	<!-- submit form -->
+	{% block scripts %}
+		<script>
+			// Selectors
+			
+			let signupForm  = document.getElementsByClassName('signup')[0];
+			let otpForm     = document.getElementsByClassName('verification')[0];
+			
+			// Selector | buttons   
+			let button      = signupForm.getElementsByClassName('done')[0];
+
+			// action
+			button.addEventListener('click', Signup);
+
+
+
+			const singupTemplate  = `<div class="signup">
+								<div class="form">
+									<form action="" autocomplete="off">
+										<div class="title">
+											<div class="stack">
+												<p>Create account</p>
+											</div>
+										</div>
+										<div class="fields">
+											<div class="fieldset">
+												<div class="firstname" data="inputfield">
+													<div class="field">
+														<input id="first-name" type="text" name="first-name" required autocomplete="off" autofill="off"/>
+														
+
+														<label class="label" for="first-name">
+														<span class="tag">First name</span>
+														</label>
+													
+													</div>
+												</div>
+												<div class="surname" data="inputfield">
+													<div class="field">
+														<input id="surname" type="text"  autocomplete="off" name="surname" required>
+														<label class="label" for="surname">
+															<span class="tag">Surname</span>
+														</label>
+													
+													</div>
+												</div>
+											</div>
+											<div class="fieldset">
+												<div class="email" data="inputfield">
+													<div class="field">
+														<input id="email" type="email" autocomplete="off" name="email-address" required>
+													
+														<label class="label" for="email-address">
+															<span class="tag">Email address</span>
+														</label>
+													</div>
+
+												</div>
+												<div class="username" data="inputfield">
+													<div class="field">
+														<input id="username" type="text" autocomplete="off" name="username" required>
+														<label class="label" for="username">
+															<span class="tag">Username</span>
+														</label>
+													</div>
+
+												</div>
+											</div>
+											<div class="fieldset">
+												<div class="password" data="inputfield">
+													<div class="field">
+														<input id="password" type="password" name="password" autocomplete="off" required>
+														<label class="label" for="password">
+															<span class="tag">Password</span>
+														</label>
+													</div>
+
+												</div>
+												<div class="confirm" data="inputfield">
+													<div class="field">
+														<input id="confirm-password" tpye="password" name="confirm-password" autocomplete="off" required>
+														<label class="label" for="confirm-password">
+															<span class="tag">Confirm password</span>
+														</label>
+													</div>
+
+												</div>
+											</div>
+											<div class="fieldset">
+												<div class="birthdate" data="inputfield">
+													<div class="field">
+														<input id="birthdate" type="text" autocomplete="off" name="birthdate" required>
+														<label class="label" for="birthdate">
+															<span class="tag">Birthdate</span>
+														</label>
+													</div>
+
+													<div class="calandar" role="button">
+														<div class="graph">
+															<div class="icon">
+																<svg class="icon" width="16" height="16" fill="currentColor">
+																	<use xlink:href="../../assets/icons/icons.svg#calendar"/>
+																</svg>					
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="gender" data="inputfield" gender="male" role="switch">
+													<div id="male" class="selector male" selected="true">
+														<div class="stack" active="true">
+															<p>Male</p>
+															<div class="radio" role="button">
+																<div class="selected">
+																	<active class="active"></active>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div id="female" class="selector female" selected="false">
+														<div class="stack" active="false">
+															<p>Female</p>
+															<div class="radio" role="button">
+																<div class="selected">
+
+																</div>
+															</div>
+														</div>
+													</div> 
+												</div>
+											</div>
+											<div class="fieldset buttons">
+												<div class="login" role="button">
+													<div class="stack">
+														<p><b>Login</b> Instead</p>   
+														<div class="graph">
+															<div class="icon">
+																<svg class="icon" width="16" height="16" fill="currentColor">
+																	<use xlink:href="../../assets/icons/icons.svg#box-arrow-in-right"/>
+																</svg>	
+															</div>
+														</div>
+													</div>
+												</div>
+
+												<div class="done" role="button">
+													<div class="stack">
+														<p><b>Continue to signup</b></p>   
+														<div class="graph">
+															<div class="icon">
+																<svg class="icon" width="16" height="16" fill="currentColor">
+																	<use xlink:href="../../assets/icons/icons.svg#arrow-right"/>
+																</svg>	
+															</div>
+														</div>
+													</div>
+												</div>
+												
+											</div> 
+										</div>     
+									</form>              
+								</div>
+							</div>
+							`;
+
+			
+			const otpTemplate     = `<div class="verification">
+								<div class="form">
+									<form action="">
+										<div class="title">
+											<div class="stack">
+												<p>Verification</p> 
+											</div>
+										</div>
+										<div class="fields">
+											<div class="fieldset">
+												<div class="otp" data="inputfield">
+													<div class="field">
+														<input id="otp" type="text" name="otp" required/>
+														<label class="label" for="otp">
+														<span class="tag">Enter verification code</span>
+														</label>
+													</div>
+												</div>
+												<div class="request-code" role="button">
+													<div class="stack">
+														<p><b>request new OTP</b></p>   
+														<div class="graph">
+															<div class="icon">
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="fieldset buttons">
+												<div class="back" role="button">
+													<div class="stack">
+														<p>Go back</p>   
+														<div class="graph">
+															<div class="icon">
+																<svg class="icon" width="16" height="16" fill="currentColor">
+																	<use xlink:href="../../assets/icons/icons.svg#box-arrow-in-right"/>
+																</svg>	
+															</div>
+														</div>
+													</div>
+												</div>
+
+												<div class="verify" role="button">
+													<div class="stack">
+														<p><b>Verify your account</b></p>   
+														<div class="graph">
+															<div class="icon">
+																<svg class="icon" width="16" height="16" fill="currentColor">
+																	<use xlink:href="../../assets/icons/icons.svg#check2"/>
+																</svg>	
+															</div>
+														</div>
+													</div>
+												</div>
+											</div> 
+										</div>
+									</form>
+								</div>
+							</div>`; 
+
+
+
+			function Steps(action) {
+				// next 
+				if (action == 'verification') {
+					// hide the signupForm
+					signupForm.hide();
+					$(otpTemplate).insertAfter(step);
+				} else if (action == 'back') {
+					otpForm.remove()
+					signupForm.show();
+				}
+			}
+
+			function Signup(e) {
+				// data collection
+				e.preventDefault();
+				
+				// input fields
+				let firstName   = document.getElementById('firstname');
+				let surname     = document.getElementById('surname');
+				let email       = document.getElementById('email');
+				let username    = document.getElementById('username');
+				let password    = document.getElementById('password');
+				let _password   = document.getElementById('confirm-password');
+				let birthdate   = document.getElementById('birthdate');
+				let gender      = document.getElementById('gender');                                        
+
+
+				if (password.value != "" && _password.value != "" && password.value == _password.value) {
+					$.ajax({
+						type        : 'POST',
+						url         : '/signup/',
+						data        : {
+							first_name  : firstName.value,
+							last_name   : surname.value,
+							email       : email.value,
+							username    : username.value,
+							password    : password.value,
+							birth_date  : birthdate.value,
+							gender      : gender.getAttribute('gender')
+						},
+						success     : Steps(action = 'verification'),
+						error       : function(e) {
+							console.log(e);
+						}
+					})
+				}
+				let step        = document.getElementById('step');
+
+				// signupForm.style['visibility'] = 'hidden';
+				// otpForm.style['visibility'] = 'visible';
+
+
+
+				// $('#step').after(otpTemplate);
+			}
+
+
+			function Verification(e) {
+				// data collection
+				e.preventDefault();
+				
+				// input fields
+				let otp   = document.getElementById('otp');
+
+				$.ajax({
+					type        : 'POST',
+					url         : '/otp/confirm/',
+					data        : {
+						otp     : otp.value
+					},
+					success     : function(e) {
+						console.log(e)
+					},
+					error       : function(e) {
+						console.log(e);
+					}
+				});
+
+			}
+
+		</script>
+
+	{% endblock %}
+{% endblock %}

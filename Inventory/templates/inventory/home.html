@@ -1,0 +1,307 @@
+{% extends "base.html" %}
+
+{% load humanize %}
+{% load static %}
+
+{% block body %}
+	{% if user.is_authenticated %}
+        {% block content %}
+            <div class="page">
+                <div id="search">
+                    <div class="find" data="find">
+                        <div class="close" data="close" role="button">
+                            <!-- icon -->
+                            <div class="graph" active='false'>
+                                <svg class="icon" width="16" height="16" fill="currentColor">
+                                    <use xlink:href="{% static 'icons/icons.svg' %}#x"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <input id="find" data="search" type="text" placeholder="looking for something ?">
+                        <div class="go" data="go" role="button">
+                            <!-- icon -->
+                            <div class="graph" active='false'>
+                                <svg class="icon" width="16" height="16" fill="currentColor">
+                                    <use xlink:href="{% static 'icons/icons.svg' %}#arrow-right"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="results">
+                        <div class="head">
+                            <div class="stack">
+                                <div class="graph">
+                                    <div class="icon">
+                                        <svg class="icon" width="24" height="24" fill="currentColor">
+                                            <use xlink:href="{% static 'icons/icons.svg' %}#bar-chart"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="title">
+                                    <p>Tranding items</p>
+                                </div>
+                                <div class="menu">
+                                    <div class="graph">
+                                        <div class="icon">
+                                            <svg class="icon" width="24" height="24" fill="currentColor">
+                                                <use xlink:href="{% static 'icons/icons.svg' %}#three-dots"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="suggestion stack">
+            
+                        </div>
+                    </div>
+                </div>
+            
+
+
+                <div id="features" class="features" role="utilities">
+                    <!-- Features contains selective shortcuts of settings, filters and more -->
+
+
+                    <!-- trands -->
+                    <div class="trands" data="stack">
+                        <div class="head tranding">
+                            <div class="stack">
+                                <div class="graph">
+                                    <div class="icon">
+                                        <svg class="icon" width="24" height="24" fill="currentColor">
+                                            <use xlink:href="{% static 'icons/icons.svg' %}#bar-chart"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="title">
+                                    <p>Tranding items</p>
+                                </div>
+                                <div class="menu">
+                                    <div class="graph">
+                                        <div class="icon">
+                                            <svg class="icon" width="24" height="24" fill="currentColor">
+                                                <use xlink:href="{% static 'icons/icons.svg' %}#three-dots"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tranding">
+                            <div class="stack">
+                                <div class="graph">
+                                    <div class="icon">
+                                        <svg class="icon" width="24" height="24" fill="currentColor">
+                                            <use xlink:href="{% static 'icons/icons.svg' %}#arrow-up-short"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="title">
+                                    <p>Baggy Jeans</p>
+                                </div>
+                                <div class="menu">
+                                    <div class="graph">
+                                        <div class="icon">
+                                            <svg class="icon" width="24" height="24" fill="currentColor">
+                                                <use xlink:href="{% static 'icons/icons.svg' %}#three-dots"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tranding">
+                            <div class="stack">
+                                <div class="graph">
+                                    <div class="icon">
+                                        <svg class="icon" width="24" height="24" fill="currentColor">
+                                            <use xlink:href="{% static 'icons/icons.svg' %}#arrow-down-short"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="title">
+                                    <p>Netbucket Jeans</p>
+                                </div>
+                                <div class="menu">
+                                    <div class="graph">
+                                        <div class="icon">
+                                            <svg class="icon" width="24" height="24" fill="currentColor">
+                                                <use xlink:href="{% static 'icons/icons.svg' %}#three-dots"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tranding">
+                            <div class="stack">
+                                <div class="graph">
+                                    <div class="icon">
+                                        <svg class="icon" width="24" height="24" fill="currentColor">
+                                            <use xlink:href="{% static 'icons/icons.svg' %}#arrow-up-short"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="title">
+                                    <p>Jack & Jones T-shirt</p>
+                                </div>
+                                <div class="menu">
+                                    <div class="graph">
+                                        <div class="icon">
+                                            <svg class="icon" width="24" height="24" fill="currentColor">
+                                                <use xlink:href="{% static 'icons/icons.svg' %}#three-dots"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tranding">
+                            <div class="stack">
+                                <div class="graph">
+                                    <div class="icon">
+                                        <svg class="icon" width="24" height="24" fill="currentColor">
+                                            <use xlink:href="{% static 'icons/icons.svg' %}#arrow-down-short"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="title">
+                                    <p>Wrangler Shirt</p>
+                                </div>
+                                <div class="menu">
+                                    <div class="graph">
+                                        <div class="icon">
+                                            <svg class="icon" width="24" height="24" fill="currentColor">
+                                                <use xlink:href="{% static 'icons/icons.svg' %}#three-dots"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tranding">
+                            <div class="stack">
+                                <div class="graph">
+                                    <div class="icon">
+                                        <svg class="icon" width="24" height="24" fill="currentColor">
+                                            <use xlink:href="{% static 'icons/icons.svg' %}#arrow-down-short"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="title">
+                                    <p>Bluewave Rugged Shirt</p>
+                                </div>
+                                <div class="menu">
+                                    <div class="graph">
+                                        <div class="icon">
+                                            <svg class="icon" width="24" height="24" fill="currentColor">
+                                                <use xlink:href="{% static 'icons/icons.svg' %}#three-dots"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+                    <div class="copyright">
+                        <p class="acts">
+                            Privacy . Terms . Advertising . Ad Choices . Cookies . More. <span>Hа̄sh © 2021</span>
+                        </p>
+                    </div>
+            
+                    
+                    <!-- <div class="mode nav">
+                        <div class="dark" role="button" active="false">
+                            <div class="graph">
+                                <div class="icon">
+                                    <svg class="icon" width="16" height="16" fill="currentColor">
+                                        <use xlink:href="{% static 'icons/icons.svg' %}#moon-fill"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="light" role="button" active="true">
+                            <div class="graph">
+                                <div class="icon">
+                                    <svg class="icon" width="16" height="16" fill="currentColor">
+                                        <use xlink:href="{% static 'icons/icons.svg' %}#sun-fill"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <active class="active">
+            
+                        </div>
+                    </div> -->
+
+                    <!-- quick access or action center -->
+                    <div class="shortcuts">
+                        <div class="center">
+                            <div class="mode" role="button">
+                                <div class="graph" active="false">
+                                    <div class="icon">
+                                        <svg class="icon" width="24" height="24" fill="currentColor">
+                                            <use xlink:href="{% static 'icons/icons.svg' %}#square-half"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+                            <div class="calendar" data="calendar" role="button">
+                                <div class="date">
+                                    <p>02 July 2021</p>
+                                </div>
+                                <div class="graph" active="false">
+                                    <div class="icon">
+                                        <svg class="icon" width="24" height="24" fill="currentColor">
+                                            <use xlink:href="{% static 'icons/icons.svg' %}#calendar2"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="scheduals" role="button">
+                                <div class="graph" active="false">
+                                    <div class="icon">
+                                        <svg class="icon" width="24" height="24" fill="currentColor">
+                                            <use xlink:href="{% static 'icons/icons.svg' %}#calendar2-week"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- bottom -->
+                </div>
+            </div>
+        {% endblock %}
+
+
+        <!-- <div id="right" class="right"></div> -->
+
+
+        
+        {% block scripts %}
+
+        {% endblock %}
+        
+        
+
+    {% endif %}
+{% endblock body %}
+
+
+	
+
+
+   
+    

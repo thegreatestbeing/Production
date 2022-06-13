@@ -1,0 +1,9 @@
+	<div class="container">
+	    <h1>Login</h1>
+	    <form method="POST" action="/login/">
+			{% csrf_token %}	
+	        <input name="username" autofocus="" maxlength="254" required="" id="id_username" type="text">
+			<input name="password" required="" id="id_password" type="password">
+	        <input value="Login" type="submit">
+	    </form>
+	</div>

@@ -1,0 +1,4849 @@
+html {
+  font-family: "Roboto", sans-serif;
+  color: #8D8D8D;
+}
+
+/* =======================================================
+
+#   Remove { Border Radius } use case and testing perpose 
+
+======================================================= */
+.card {
+  width: min-content;
+  height: auto;
+  border: 1px solid #dadada;
+  margin: 48px auto;
+  border-radius: 4px;
+}
+.card .header .description {
+  margin: 0px;
+  height: 48px;
+  display: flex;
+}
+.card .header .description p {
+  text-align: center;
+  font-size: 18px;
+  font-weight: normal;
+  margin: auto auto;
+}
+
+#compose .details {
+  width: 100%;
+  height: 48px;
+  display: flex;
+}
+#compose .details .profile {
+  position: relative;
+  top: 0;
+  width: 48px;
+  height: 48px;
+  margin: auto 20px;
+  display: flex;
+  position: false;
+}
+#compose .details .profile .icon {
+  width: 32px;
+  height: 32px;
+  margin: 4px;
+}
+#compose .details .user {
+  width: fit-content;
+  height: 48px;
+  display: flex;
+}
+#compose .details .user .name {
+  font-size: 16px;
+  font-weight: bold;
+}
+#compose .details .privacy {
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  right: 0px;
+  margin: auto 20px;
+  display: flex;
+}
+#compose .details .privacy .icon {
+  width: 32px;
+  height: 32px;
+  margin: 4px;
+}
+#compose .form {
+  width: auto;
+  height: auto;
+  margin: 0 20px;
+}
+#compose .form .write {
+  width: 100%;
+  height: 124px;
+  border: none;
+  padding: 12px 0px;
+  font-family: inherit;
+  resize: none;
+}
+#compose .form .write:active, #compose .form .write:focus {
+  outline: none;
+}
+
+/*===================================================================
+
+                    Helper classes v.0.0.1
+
+        Helper classes is being create to target in better way 
+        to manipulate with stylings of the setected DOM without
+        spacifying inline css and tweaks, just by the toggling
+        between classes.        
+
+        For better "UI" (User Interface) management, clean DOM.
+
+
+===================================================================*/
+.top-zero {
+  top: 0px;
+}
+
+.right-zero {
+  right: 0px;
+}
+
+.bottom-zero {
+  bottom: 0px;
+}
+
+.left-zero {
+  left: 0px;
+}
+
+/*===================================================================
+
+                    Overlay helper classes
+
+===================================================================*/
+.overlay {
+  overflow: hidden;
+}
+
+.overlay-right-indent {
+  right: 17px;
+}
+
+/*===================================================================
+
+                        Font helper classes
+
+===================================================================*/
+.text {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+.title {
+  font-size: 18px;
+}
+
+.medium-text {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.small-text {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+/** =================================================================
+
+
+                        Icon Controller v 0.1
+
+
+
+==================================================================**/
+div[active=false] {
+  color: #636363;
+}
+
+div[active=false]:hover {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: #dadada;
+  color: #3f3f3f;
+}
+
+div[active=true] {
+  color: #000;
+}
+
+.block {
+  width: 32px !important;
+  height: 32px !important;
+  border-radius: 8px;
+  background: #dadada;
+  z-index: -1;
+  margin: auto;
+}
+
+.logout div[active=true] {
+  color: white;
+}
+
+html {
+  font-family: "Roboto", sans-serif;
+  color: #8D8D8D;
+}
+
+/* =======================================================
+
+#   Remove { Border Radius } use case and testing perpose 
+
+======================================================= */
+.modal {
+  position: fixed;
+  top: 0px;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  overflow-y: scroll;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.4);
+}
+.modal .dialog {
+  width: 832px;
+  position: relative;
+  margin: 60px 90px;
+  border-radius: 8px;
+  background: #fff;
+  overflow-y: auto;
+  -ms-box-shadow: 0px 4px 12px 0 rgba(121, 121, 121, 0.08), 0px 0px 24px 8px rgba(60, 64, 67, 0.16);
+  -o-box-shadow: 0px 4px 12px 0 rgba(121, 121, 121, 0.08), 0px 0px 24px 8px rgba(60, 64, 67, 0.16);
+  -webkit-box-shadow: 0px 4px 12px 0 rgba(121, 121, 121, 0.08), 0px 0px 24px 8px rgba(60, 64, 67, 0.16);
+  -moz-box-shadow: 0px 4px 12px 0 rgba(121, 121, 121, 0.08), 0px 0px 24px 8px rgba(60, 64, 67, 0.16);
+  box-shadow: 0px 4px 12px 0 rgba(121, 121, 121, 0.08), 0px 0px 24px 8px rgba(60, 64, 67, 0.16);
+}
+.modal .dialog .content .heading {
+  height: 56px;
+  width: 100%;
+}
+.modal .dialog .content .heading .back {
+  position: absolute;
+  top: 0;
+  width: 56px;
+  height: 56px;
+  margin: auto 20px;
+  display: flex;
+  position: false;
+}
+.modal .dialog .content .heading .back .icon {
+  width: 24px;
+  height: 24px;
+  margin: auto;
+}
+.modal .dialog .content .heading .title {
+  width: 100%;
+  height: 56px;
+  display: flex;
+}
+.modal .dialog .content .heading .title p {
+  font-size: 18px;
+  font-weight: bold;
+  margin: auto;
+}
+.modal .dialog .content .heading .close {
+  top: 0;
+  width: 56px;
+  height: 56px;
+  position: absolute;
+  right: 0px;
+  margin: auto 0px;
+  display: flex;
+}
+.modal .dialog .content .heading .close .icon {
+  width: 24px;
+  height: 24px;
+  margin: auto;
+}
+.modal .dialog .content .body {
+  width: 100%;
+  height: auto;
+}
+.modal .dialog .content .footer {
+  width: 100%;
+  height: 48px;
+  /* nav */
+}
+
+html {
+  font-family: "Roboto", sans-serif;
+  color: #8D8D8D;
+}
+
+/* =======================================================
+
+#   Remove { Border Radius } use case and testing perpose 
+
+======================================================= */
+.picker {
+  width: 336px;
+  height: 528px;
+  border-radius: 4px;
+  position: absolute;
+  background: white;
+  -ms-box-shadow: 0px 4px 12px 0 rgba(121, 121, 121, 0.08), 0px 0px 24px 8px rgba(60, 64, 67, 0.16);
+  -o-box-shadow: 0px 4px 12px 0 rgba(121, 121, 121, 0.08), 0px 0px 24px 8px rgba(60, 64, 67, 0.16);
+  -webkit-box-shadow: 0px 4px 12px 0 rgba(121, 121, 121, 0.08), 0px 0px 24px 8px rgba(60, 64, 67, 0.16);
+  -moz-box-shadow: 0px 4px 12px 0 rgba(121, 121, 121, 0.08), 0px 0px 24px 8px rgba(60, 64, 67, 0.16);
+  box-shadow: 0px 4px 12px 0 rgba(121, 121, 121, 0.08), 0px 0px 24px 8px rgba(60, 64, 67, 0.16);
+}
+.picker .header {
+  width: 336px;
+  height: 96px;
+  background: gray;
+}
+.picker .header .title {
+  width: 100%;
+  height: 50%;
+  display: flex;
+}
+.picker .header .title p {
+  font-size: 12px;
+  font-weight: bold;
+  color: white;
+  margin: auto auto auto 20px;
+}
+.picker .header .selected {
+  width: 100%;
+  height: 50%;
+  display: flex;
+}
+.picker .header .selected .date {
+  width: 100%;
+  height: 48px;
+  display: flex;
+}
+.picker .header .selected .date p {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  margin: auto auto auto 20px;
+}
+.picker .header .selected .action {
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  right: 0px;
+  margin: auto 20px;
+  display: flex;
+}
+.picker .header .selected .action .icon {
+  width: 40px;
+  height: 40px;
+  margin: 0px;
+}
+.picker .calendar {
+  width: 336px;
+  height: 432px;
+}
+.picker .calendar .selection {
+  width: 100%;
+  height: 48px;
+  display: flex;
+}
+.picker .calendar .selection .year {
+  width: auto;
+  height: 48px;
+  margin: auto auto auto 20px;
+}
+.picker .calendar .selection .pagination {
+  width: auto;
+  height: 48px;
+  display: flex;
+  right: 0px;
+}
+.picker .calendar .selection .pagination .previous .icon {
+  width: 48px;
+  height: 48px;
+  margin: 0px;
+}
+.picker .calendar .selection .pagination .next .icon {
+  width: 48px;
+  height: 48px;
+  margin: 0px;
+}
+.picker .calendar .days {
+  width: 100%;
+  display: flex;
+}
+.picker .calendar .days .day {
+  width: 48px;
+  height: 48px;
+  margin: 0px;
+  display: flex;
+}
+.picker .calendar .days .day p {
+  font-size: small;
+  font-weight: 400;
+  margin: auto auto;
+}
+.picker .calendar .month {
+  width: 336px;
+  height: 288px;
+}
+.picker .calendar .month .week {
+  width: 100%;
+  height: 48px;
+  display: flex;
+}
+.picker .calendar .month .week .date {
+  width: 48px;
+  height: 48px;
+  margin: 0px;
+  display: flex;
+}
+.picker .calendar .month .week .date .icon {
+  width: 40px;
+  height: 40px;
+  margin: auto;
+  display: flex;
+  cursor: pointer;
+}
+.picker .calendar .month .week .date .icon p {
+  margin: auto auto;
+  font-size: small;
+  font-weight: 400;
+}
+.picker .calendar .month .week .date .icon:hover {
+  border-radius: 50%;
+  border: 4px solid gray;
+}
+.picker .calendar .month .week .date .icon.picked {
+  border-radius: 50%;
+  border: 4px solid black !important;
+}
+.picker .calendar .month .week .date .icon.current {
+  border-radius: 50%;
+  border: 4px solid gray;
+}
+
+html {
+  font-family: "Roboto", sans-serif;
+  color: #8D8D8D;
+}
+
+/* =======================================================
+
+#   Remove { Border Radius } use case and testing perpose 
+
+======================================================= */
+.popover {
+  position: absolute;
+  height: auto;
+  width: auto;
+  z-index: 1;
+}
+.popover .popover-dialog .popover-content .popover-data {
+  -ms-box-shadow: 0px 2px 2px 0 rgba(121, 121, 121, 0.08), 0px 2px 6px 2px rgba(60, 64, 67, 0.16);
+  -o-box-shadow: 0px 2px 2px 0 rgba(121, 121, 121, 0.08), 0px 2px 6px 2px rgba(60, 64, 67, 0.16);
+  -webkit-box-shadow: 0px 2px 2px 0 rgba(121, 121, 121, 0.08), 0px 2px 6px 2px rgba(60, 64, 67, 0.16);
+  -moz-box-shadow: 0px 2px 2px 0 rgba(121, 121, 121, 0.08), 0px 2px 6px 2px rgba(60, 64, 67, 0.16);
+  box-shadow: 0px 2px 2px 0 rgba(121, 121, 121, 0.08), 0px 2px 6px 2px rgba(60, 64, 67, 0.16);
+}
+
+.reactions {
+  width: 480px;
+  height: 48px;
+  border-radius: 4px;
+  background: #fff;
+  -ms-box-shadow: 0px 2px 2px 0 rgba(121, 121, 121, 0.08), 0px 2px 6px 2px rgba(60, 64, 67, 0.16);
+  -o-box-shadow: 0px 2px 2px 0 rgba(121, 121, 121, 0.08), 0px 2px 6px 2px rgba(60, 64, 67, 0.16);
+  -webkit-box-shadow: 0px 2px 2px 0 rgba(121, 121, 121, 0.08), 0px 2px 6px 2px rgba(60, 64, 67, 0.16);
+  -moz-box-shadow: 0px 2px 2px 0 rgba(121, 121, 121, 0.08), 0px 2px 6px 2px rgba(60, 64, 67, 0.16);
+  box-shadow: 0px 2px 2px 0 rgba(121, 121, 121, 0.08), 0px 2px 6px 2px rgba(60, 64, 67, 0.16);
+}
+.reactions #emoji {
+  width: 480px;
+  height: 40px;
+  display: flex;
+}
+.reactions #emoji .thumbs-up {
+  width: 80px;
+  height: 40px;
+  margin: 0px;
+}
+.reactions #emoji .thumbs-up .graph {
+  width: 48px;
+  height: 48px;
+  margin: 0px auto;
+  display: flex;
+  position: false;
+}
+.reactions #emoji .thumbs-up .graph .icon {
+  width: 40px;
+  height: 40px;
+  margin: 0px;
+}
+.reactions #emoji .thumbs-up .graph .icon:hover {
+  width: 60px;
+  height: 60px;
+  margin: -10px;
+}
+.reactions #emoji .heart {
+  width: 80px;
+  height: 40px;
+  margin: 0px;
+}
+.reactions #emoji .heart .graph {
+  width: 48px;
+  height: 48px;
+  margin: 0px auto;
+  display: flex;
+  position: false;
+}
+.reactions #emoji .heart .graph .icon {
+  width: 40px;
+  height: 40px;
+  margin: 0px;
+}
+.reactions #emoji .heart .graph .icon:hover {
+  width: 60px;
+  height: 60px;
+  margin: -10px;
+}
+.reactions #emoji .laughter {
+  width: 80px;
+  height: 40px;
+  margin: 0px;
+}
+.reactions #emoji .laughter .graph {
+  width: 48px;
+  height: 48px;
+  margin: 0px auto;
+  display: flex;
+  position: false;
+}
+.reactions #emoji .laughter .graph .icon {
+  width: 40px;
+  height: 40px;
+  margin: 0px;
+}
+.reactions #emoji .laughter .graph .icon:hover {
+  width: 60px;
+  height: 60px;
+  margin: -10px;
+}
+.reactions #emoji .angry {
+  width: 80px;
+  height: 40px;
+  margin: 0px;
+}
+.reactions #emoji .angry .graph {
+  width: 48px;
+  height: 48px;
+  margin: 0px auto;
+  display: flex;
+  position: false;
+}
+.reactions #emoji .angry .graph .icon {
+  width: 40px;
+  height: 40px;
+  margin: 0px;
+}
+.reactions #emoji .angry .graph .icon:hover {
+  width: 60px;
+  height: 60px;
+  margin: -10px;
+}
+.reactions #emoji .party {
+  width: 80px;
+  height: 40px;
+  margin: 0px;
+}
+.reactions #emoji .party .graph {
+  width: 48px;
+  height: 48px;
+  margin: 0px auto;
+  display: flex;
+  position: false;
+}
+.reactions #emoji .party .graph .icon {
+  width: 40px;
+  height: 40px;
+  margin: 0px;
+}
+.reactions #emoji .party .graph .icon:hover {
+  width: 60px;
+  height: 60px;
+  margin: -10px;
+}
+.reactions #emoji .heart-eyes {
+  width: 80px;
+  height: 40px;
+  margin: 0px;
+}
+.reactions #emoji .heart-eyes .graph {
+  width: 48px;
+  height: 48px;
+  margin: 0px auto;
+  display: flex;
+  position: false;
+}
+.reactions #emoji .heart-eyes .graph .icon {
+  width: 40px;
+  height: 40px;
+  margin: 0px;
+}
+.reactions #emoji .heart-eyes .graph .icon:hover {
+  width: 60px;
+  height: 60px;
+  margin: -10px;
+}
+
+.scroll .axisX {
+  height: 4px;
+  width: 100%;
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+}
+.scroll .axisX .track {
+  width: 100%;
+  height: 100%;
+}
+.scroll .axisX .track .thumb {
+  height: 100%;
+  width: auto;
+  position: absolute;
+  border-radius: 2px;
+}
+.scroll .axisX:hover {
+  height: 8px;
+  background: lightgray;
+  border-radius: 2px;
+}
+.scroll .axisX:hover .track {
+  border-radius: 2px;
+}
+.scroll .axisX:hover .thumb {
+  background: gray;
+  border-radius: 2px;
+}
+.scroll .axisY {
+  height: 100%;
+  width: 4px;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+}
+.scroll .axisY .track {
+  width: 100%;
+  height: 100%;
+}
+.scroll .axisY .track .thumb {
+  height: auto;
+  width: 100%;
+  position: absolute;
+  border-radius: 2px;
+}
+.scroll .axisY:hover {
+  width: 8px;
+  background: lightgray;
+  border-radius: 2px;
+}
+.scroll .axisY:hover .track {
+  border-radius: 2px;
+}
+.scroll .axisY:hover .thumb {
+  background: gray;
+  border-radius: 2px;
+}
+
+.active {
+  width: 8px;
+  background: lightgray;
+  border-radius: 2px;
+}
+.active .track {
+  width: 100%;
+  height: 100%;
+  border-radius: 2px;
+}
+.active .thumb {
+  background: gray;
+  border-radius: 4px !important;
+}
+
+.overflow {
+  height: 100%;
+  overflow: hidden;
+}
+
+.animate {
+  transition: top, ease-in;
+}
+
+html {
+  font-family: "Roboto", sans-serif;
+  color: #8D8D8D;
+}
+
+/* =======================================================
+
+#   Remove { Border Radius } use case and testing perpose 
+
+======================================================= */
+.tooltip {
+  height: auto;
+  width: auto;
+  z-index: 1;
+}
+.tooltip .tooltip-dialog .tooltip-content .tooltip-data {
+  width: 200px;
+  height: 200px;
+  border-radius: 4px;
+  background: #fff;
+  display: flex;
+  -ms-box-shadow: 0px 2px 2px 0 rgba(121, 121, 121, 0.08), 0px 2px 6px 2px rgba(60, 64, 67, 0.16);
+  -o-box-shadow: 0px 2px 2px 0 rgba(121, 121, 121, 0.08), 0px 2px 6px 2px rgba(60, 64, 67, 0.16);
+  -webkit-box-shadow: 0px 2px 2px 0 rgba(121, 121, 121, 0.08), 0px 2px 6px 2px rgba(60, 64, 67, 0.16);
+  -moz-box-shadow: 0px 2px 2px 0 rgba(121, 121, 121, 0.08), 0px 2px 6px 2px rgba(60, 64, 67, 0.16);
+  box-shadow: 0px 2px 2px 0 rgba(121, 121, 121, 0.08), 0px 2px 6px 2px rgba(60, 64, 67, 0.16);
+}
+.tooltip .tooltip-dialog .tooltip-content .tooltip-data .graph {
+  width: 48px;
+  height: 48px;
+  margin: auto 20px;
+  display: flex;
+  position: false;
+}
+.tooltip .tooltip-dialog .tooltip-content .tooltip-data .graph .icon {
+  width: 40px;
+  height: 40px;
+  margin: 0px;
+}
+.tooltip .tooltip-dialog .tooltip-content .tooltip-data .username {
+  width: fit-content;
+}
+
+.fix {
+  position: fixed;
+}
+
+.absolute {
+  position: absolute;
+}
+
+html {
+  font-family: "Roboto", sans-serif;
+  color: #8D8D8D;
+}
+
+/* =======================================================
+
+#   Remove { Border Radius } use case and testing perpose 
+
+======================================================= */
+.header {
+  position: fixed;
+  top: 0;
+  left: 56px;
+  margin: 0;
+  padding: 0;
+  width: calc(100% - 56px);
+  height: 56px;
+  z-index: 10;
+  background: #fff;
+}
+.header .menu {
+  height: 56px;
+  font-size: 0px;
+  display: flex;
+}
+.header .menu .search {
+  height: 56px;
+  width: 56px;
+  margin: 0px;
+}
+.header .menu .search .graph {
+  width: 48px;
+  height: 48px;
+  margin: 0px;
+  display: flex;
+  position: absolute;
+}
+.header .menu .search .graph .icon {
+  width: 24px;
+  height: 24px;
+  margin: auto;
+}
+.header .menu .search active {
+  position: absolute;
+  width: 280px;
+  height: 40px;
+  top: 4px;
+  margin: 0px 20px 0px 0px;
+}
+.header .menu .search active input {
+  width: 224px;
+  height: 24px;
+  padding: none;
+  margin: 8px;
+  border: none;
+  border-radius: 0px;
+}
+.header .menu .search active input else {
+  padding: 0px;
+}
+.header .menu .search active input:active, .header .menu .search active input:focus {
+  outline: none;
+}
+.header .menu .search active .graph {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  right: 0px;
+  margin: -40px 0px 0px 0px;
+  display: flex;
+}
+.header .menu .search active .graph .icon {
+  width: 24px;
+  height: 24px;
+  margin: 8px;
+}
+.header .menu .logout {
+  height: 56px;
+  width: 56px;
+  position: absolute;
+  right: 56px;
+  background: lightblue;
+}
+.header .menu .logout .graph {
+  width: 48px;
+  height: 48px;
+  margin: 4px;
+  display: flex;
+  position: absolute;
+}
+.header .menu .logout .graph .icon {
+  width: 24px;
+  height: 24px;
+  margin: auto;
+}
+.header .menu .logout active {
+  display: flex;
+  height: 48px;
+  width: 4px;
+  margin: 4px;
+  border-radius: 100%;
+  background: #2e2e2e;
+  z-index: -1;
+}
+.header .menu .store {
+  height: 56px;
+  width: 56px;
+  display: flex;
+  position: absolute;
+  right: 0px;
+}
+.header .menu .store .graph {
+  width: 48px;
+  height: 48px;
+  margin: 4px;
+  display: flex;
+  position: absolute;
+}
+.header .menu .store .graph .icon {
+  width: 24px;
+  height: 24px;
+  margin: auto;
+}
+.header .menu .store active {
+  display: flex;
+  height: 48px;
+  width: 4px;
+  margin: 4px;
+  border-radius: 100%;
+  background: #2e2e2e;
+  z-index: -1;
+}
+
+html {
+  font-family: "Roboto", sans-serif;
+  color: #8D8D8D;
+}
+
+/* =======================================================
+
+#   Remove { Border Radius } use case and testing perpose 
+
+======================================================= */
+.navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background: #f6f8fa;
+  -ms-box-shadow: 0px 1px 1px 0 rgba(121, 121, 121, 0.08), -4px 1px 3px 1px rgba(60, 64, 67, 0.16);
+  -o-box-shadow: 0px 1px 1px 0 rgba(121, 121, 121, 0.08), -4px 1px 3px 1px rgba(60, 64, 67, 0.16);
+  -webkit-box-shadow: 0px 1px 1px 0 rgba(121, 121, 121, 0.08), -4px 1px 3px 1px rgba(60, 64, 67, 0.16);
+  -moz-box-shadow: 0px 1px 1px 0 rgba(121, 121, 121, 0.08), -4px 1px 3px 1px rgba(60, 64, 67, 0.16);
+  box-shadow: 0px 1px 1px 0 rgba(121, 121, 121, 0.08), -4px 1px 3px 1px rgba(60, 64, 67, 0.16);
+}
+.navigation .menu {
+  width: 56px;
+  height: 100%;
+  font-size: 0px;
+}
+.navigation .menu .logo {
+  height: 56px;
+  width: 56px;
+  position: absolute;
+}
+.navigation .menu .logo .graph {
+  width: 48px;
+  height: 48px;
+  margin: 4px;
+  display: flex;
+  position: absolute;
+}
+.navigation .menu .logo .graph .icon {
+  width: 32px;
+  height: 32px;
+  margin: auto;
+}
+.navigation .menu .panel {
+  width: 56px;
+  height: 336px;
+  position: absolute;
+  margin: 0px auto;
+  top: 56px;
+  display: grid;
+}
+.navigation .menu .panel .find {
+  height: 56px;
+  width: 56px;
+}
+.navigation .menu .panel .find .graph {
+  width: 48px;
+  height: 48px;
+  margin: 4px;
+  display: flex;
+  position: absolute;
+}
+.navigation .menu .panel .find .graph .icon {
+  width: 20px;
+  height: 20px;
+  margin: auto;
+}
+.navigation .menu .panel .find active {
+  display: flex;
+  height: 48px;
+  width: 48px;
+  margin: 4px;
+  border-radius: 8px;
+  background: #fff;
+  z-index: -1;
+}
+.navigation .menu .panel .home {
+  height: 56px;
+  width: 56px;
+}
+.navigation .menu .panel .home .graph {
+  width: 48px;
+  height: 48px;
+  margin: 4px;
+  display: flex;
+  position: absolute;
+}
+.navigation .menu .panel .home .graph .icon {
+  width: 24px;
+  height: 24px;
+  margin: auto;
+}
+.navigation .menu .panel .home active {
+  display: flex;
+  height: 48px;
+  width: 48px;
+  margin: 4px;
+  border-radius: 8px;
+  background: #fff;
+  z-index: -1;
+}
+.navigation .menu .panel .scan {
+  height: 56px;
+  width: 56px;
+}
+.navigation .menu .panel .scan .graph {
+  width: 48px;
+  height: 48px;
+  margin: 4px;
+  display: flex;
+  position: absolute;
+}
+.navigation .menu .panel .scan .graph .icon {
+  width: 24px;
+  height: 24px;
+  margin: auto;
+}
+.navigation .menu .panel .scan active {
+  display: flex;
+  height: 48px;
+  width: 48px;
+  margin: 4px;
+  border-radius: 8px;
+  background: #fff;
+  z-index: -1;
+}
+.navigation .menu .panel .sales {
+  height: 56px;
+  width: 56px;
+}
+.navigation .menu .panel .sales .graph {
+  width: 48px;
+  height: 48px;
+  margin: 4px;
+  display: flex;
+  position: absolute;
+}
+.navigation .menu .panel .sales .graph .icon {
+  width: 24px;
+  height: 24px;
+  margin: auto;
+}
+.navigation .menu .panel .sales active {
+  display: flex;
+  height: 48px;
+  width: 48px;
+  margin: 4px;
+  border-radius: 8px;
+  background: #fff;
+  z-index: -1;
+}
+.navigation .menu .panel .products {
+  height: 56px;
+  width: 56px;
+}
+.navigation .menu .panel .products .graph {
+  width: 48px;
+  height: 48px;
+  margin: 4px;
+  display: flex;
+  position: absolute;
+}
+.navigation .menu .panel .products .graph .icon {
+  width: 24px;
+  height: 24px;
+  margin: auto;
+}
+.navigation .menu .panel .products active {
+  display: flex;
+  height: 48px;
+  width: 48px;
+  margin: 4px;
+  border-radius: 8px;
+  background: #fff;
+  z-index: -1;
+}
+.navigation .menu .panel .employees {
+  height: 56px;
+  width: 56px;
+}
+.navigation .menu .panel .employees .graph {
+  width: 48px;
+  height: 48px;
+  margin: 4px;
+  display: flex;
+  position: absolute;
+}
+.navigation .menu .panel .employees .graph .icon {
+  width: 24px;
+  height: 24px;
+  margin: auto;
+}
+.navigation .menu .panel .employees active {
+  display: flex;
+  height: 48px;
+  width: 48px;
+  margin: 4px;
+  border-radius: 8px;
+  background: #fff;
+  z-index: -1;
+}
+.navigation .menu .panel .receipts {
+  height: 56px;
+  width: 56px;
+}
+.navigation .menu .panel .receipts .graph {
+  width: 48px;
+  height: 48px;
+  margin: 4px;
+  display: flex;
+  position: absolute;
+}
+.navigation .menu .panel .receipts .graph .icon {
+  width: 24px;
+  height: 24px;
+  margin: auto;
+}
+.navigation .menu .panel .receipts active {
+  display: flex;
+  height: 48px;
+  width: 48px;
+  margin: 4px;
+  border-radius: 8px;
+  background: #fff;
+  z-index: -1;
+}
+.navigation .menu .panel .settings {
+  height: 56px;
+  width: 56px;
+}
+.navigation .menu .panel .settings .graph {
+  width: 48px;
+  height: 48px;
+  margin: 4px;
+  display: flex;
+  position: absolute;
+}
+.navigation .menu .panel .settings .graph .icon {
+  width: 24px;
+  height: 24px;
+  margin: auto;
+}
+.navigation .menu .panel .settings active {
+  display: flex;
+  height: 48px;
+  width: 48px;
+  margin: 4px;
+  border-radius: 8px;
+  background: #fff;
+  z-index: -1;
+}
+.navigation .menu .logout {
+  height: 56px;
+  width: 56px;
+  display: flex;
+  position: absolute;
+  bottom: 0px;
+}
+.navigation .menu .logout .graph {
+  width: 48px;
+  height: 48px;
+  margin: 4px;
+  display: flex;
+  position: absolute;
+}
+.navigation .menu .logout .graph .icon {
+  width: 24px;
+  height: 24px;
+  margin: auto;
+}
+.navigation .menu .logout active {
+  display: flex;
+  height: 48px;
+  width: 48px;
+  margin: 8px;
+  border-radius: 8px;
+  background: #fff;
+  z-index: -1;
+}
+
+.header {
+  height: 56px;
+  width: calc(100% - 56px);
+  position: fixed;
+  top: 0px;
+  left: 56px;
+  background: #f6f8fa;
+  display: flex;
+}
+.header .title {
+  width: auto;
+  height: 56px;
+  position: absolute;
+  display: flex;
+  left: 30px;
+}
+.header .title .location {
+  height: 56px;
+  width: 56px;
+}
+.header .title .location .graph {
+  width: 48px;
+  height: 48px;
+  margin: 4px;
+  display: flex;
+  position: absolute;
+}
+.header .title .location .graph .icon {
+  width: 24px;
+  height: 24px;
+  margin: auto;
+}
+.header .title .heading {
+  width: inherit;
+  height: 48px;
+  display: flex;
+  margin: 4px;
+}
+.header .title .heading p {
+  font-size: 20px;
+  font-weight: 600;
+  position: relative;
+  margin: auto 10px auto 0px;
+}
+.header .title .heading .address {
+  font-size: 14px;
+  font-weight: 600;
+  position: relative;
+  margin: auto;
+  padding-left: 10px;
+  border-left: 1px solid black;
+}
+.header .scan {
+  height: 56px;
+  width: 56px;
+  position: absolute;
+  right: 422px;
+}
+.header .scan .graph {
+  width: 48px;
+  height: 48px;
+  margin: 4px;
+  display: flex;
+  position: absolute;
+}
+.header .scan .graph .icon {
+  width: 24px;
+  height: 24px;
+  margin: auto;
+}
+.header .scan active {
+  display: flex;
+  height: 48px;
+  width: 48px;
+  margin: 4px;
+  border-radius: 8px;
+  background: #fff;
+  z-index: -1;
+  background: #fff;
+}
+.header .notifications {
+  height: 56px;
+  width: 56px;
+  position: absolute;
+  right: 86px;
+}
+.header .notifications .graph {
+  width: 48px;
+  height: 48px;
+  margin: 4px;
+  display: flex;
+  position: absolute;
+}
+.header .notifications .graph .icon {
+  width: 20px;
+  height: 20px;
+  margin: auto;
+}
+.header .notifications active {
+  display: flex;
+  height: 48px;
+  width: 48px;
+  margin: 4px;
+  border-radius: 8px;
+  background: #fff;
+  z-index: -1;
+  background: #fff;
+}
+.header .profile {
+  height: 56px;
+  width: 56px;
+  display: flex;
+  position: absolute;
+  z-index: 1;
+  right: 30px;
+}
+.header .profile .graph {
+  width: 48px;
+  height: 48px;
+  margin: 4px;
+  display: flex;
+  position: absolute;
+  border-radius: 50%;
+}
+.header .profile .graph .icon {
+  width: 40px;
+  height: 40px;
+  margin: auto;
+}
+.header .profile active {
+  display: flex;
+  height: 48px;
+  width: 48px;
+  margin: 4px;
+  border-radius: 100%;
+  background: #2e2e2e;
+  z-index: -1;
+  background: #fff;
+}
+
+.page {
+  width: calc(100% - 56px);
+  height: calc(100% - 56px);
+  position: absolute;
+  display: flex;
+  left: 56px;
+  top: 56px;
+  background: #f6f8fa;
+  /* =======================================================
+
+  #   Remove { Border Radius } use case and testing perpose 
+
+  ======================================================= */
+  /* =======================================================
+
+  #   Remove { Border Radius } use case and testing perpose 
+
+  ======================================================= */
+}
+.page .contacts {
+  width: auto;
+  height: calc(100% - 96px);
+  padding-right: 10px;
+  overflow: hidden;
+  position: relative;
+}
+.page .contacts .list {
+  width: 100%;
+  height: auto;
+  margin: 0px 0px 48px 0px;
+}
+.page .contacts .list .contact {
+  display: flex;
+  height: 56px;
+}
+.page .contacts .list .contact .profile {
+  display: flex;
+  width: auto;
+  height: auto;
+  margin: auto 16px;
+}
+.page .contacts .list .contact .profile .graph {
+  width: 48px;
+  height: 48px;
+  margin: auto 16;
+  display: flex;
+  position: false;
+}
+.page .contacts .list .contact .profile .graph .icon {
+  width: 32px;
+  height: 32px;
+  margin: auto;
+}
+.page .contacts .list .contact .profile .active {
+  width: 40px;
+  height: 40px;
+  background: #e2e2e2;
+  border-radius: 50%;
+  position: absolute;
+  z-index: -1;
+  margin: 4px;
+}
+.page .contacts .list .contact .title {
+  margin: 0px 0px 0px 0px;
+  height: 48px;
+  display: flex;
+}
+.page .contacts .list .contact .title p {
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  margin: auto auto;
+}
+.page .contacts .list .contact .action {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  position: absolute;
+  right: 0px;
+  margin: auto 16px;
+}
+.page .contacts .list .contact .action .graph {
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  right: 0px;
+  margin: auto;
+  display: flex;
+}
+.page .contacts .list .contact .action .graph .icon {
+  width: 24px;
+  height: 24px;
+  margin: auto;
+}
+.page .contacts .list .contact .connected {
+  width: calc(100% - 20px);
+  height: 48px;
+  left: 10px;
+  margin: 4px 0px 0px;
+  position: absolute;
+  z-index: -1;
+  background: #e2e2e2;
+  border-radius: 4px;
+}
+.page .contacts .list:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.page .features {
+  width: 392px;
+  height: auto;
+  position: relative;
+}
+.page .features .trands {
+  position: fixed;
+  width: 392px;
+  height: auto;
+  display: grid;
+}
+.page .features .trands .tranding {
+  width: 100%;
+  height: 56px;
+}
+.page .features .trands .tranding .stack {
+  width: calc(100% - 8px);
+  height: 48px;
+  background: #fff;
+  border-radius: 8px;
+  margin: 4px;
+  display: flex;
+}
+.page .features .trands .tranding .stack .graph {
+  width: 48px;
+  height: 48px;
+  margin: 0px;
+  display: flex;
+  position: relative;
+  border-radius: 50%;
+}
+.page .features .trands .tranding .stack .graph .icon {
+  width: 24px;
+  height: 24px;
+  margin: auto;
+}
+.page .features .trands .tranding .stack .title {
+  width: calc(100% - 112px);
+  margin: auto 8px;
+}
+.page .features .trands .tranding .stack .title p {
+  margin: 0px;
+}
+.page .features .trands .tranding .stack .menu {
+  position: absolute;
+  visibility: hidden;
+  right: 4px;
+}
+.page .features .trands .tranding:hover .stack .menu {
+  visibility: visible;
+}
+.page .features .products {
+  position: relative;
+  width: 392px;
+  height: auto;
+  display: grid;
+}
+.page .features .products .product {
+  width: 392px;
+  height: 168px;
+}
+.page .features .products .product .stack {
+  width: 392px;
+  height: 168px;
+  border-radius: 8px;
+  display: flex;
+}
+.page .features .products .product .stack .picture {
+  position: relative;
+  width: 96px;
+  height: 152px;
+  margin: 4px;
+  padding: 4px;
+  background: #fff;
+  border-radius: 8px;
+}
+.page .features .products .product .stack .picture img {
+  height: 100%;
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+}
+.page .features .products .product .stack .picture .graph {
+  height: 100%;
+  width: 100%;
+  border-radius: 8px;
+  display: flex;
+  background: #f6f8fa;
+}
+.page .features .products .product .stack .picture .graph .icon {
+  width: 32px;
+  height: 32px;
+  margin: auto;
+}
+.page .features .products .product .stack .details {
+  width: 272px;
+  height: 160px;
+  position: relative;
+  border-radius: 8px;
+  background: #fff;
+  margin: 4px;
+}
+.page .features .products .product .stack .details .title {
+  width: 100%;
+  height: 56px;
+  display: flex;
+  position: relative;
+  margin: -4px 0px 0px;
+}
+.page .features .products .product .stack .details .title p {
+  font-size: 16px;
+  font-weight: 600;
+  margin: auto 4px;
+}
+.page .features .products .product .stack .details .title:empty {
+  width: calc(100% - 8px);
+  height: 48px;
+  margin: 4px;
+  border-radius: 8px;
+  background: #f6f8fa;
+}
+.page .features .products .product .stack .details .size {
+  width: auto;
+  height: 56px;
+  display: flex;
+  margin-left: -4px;
+  position: relative;
+}
+.page .features .products .product .stack .details .size p {
+  font-size: 14px;
+  font-weight: 400;
+  margin: auto 4px;
+}
+.page .features .products .product .stack .details .size .available {
+  width: auto;
+  height: 56px;
+  display: flex;
+}
+.page .features .products .product .stack .details .size .available .graph {
+  width: 56px;
+  height: 56px;
+  display: flex;
+}
+.page .features .products .product .stack .details .size .available .graph .icon {
+  border: 1px solid #8D8D8D;
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  margin: auto;
+  display: flex;
+}
+.page .features .products .product .stack .details .size .available .graph .icon p {
+  font-size: 12px;
+  font-weight: 200;
+  margin: auto;
+}
+.page .features .products .product .stack .details .size:empty {
+  width: calc(100% - 8px);
+  height: 48px;
+  margin: 4px;
+  border-radius: 8px;
+  background: #f6f8fa;
+}
+.page .features .products .product .stack .details .price {
+  width: auto;
+  height: 56px;
+  display: flex;
+  position: relative;
+}
+.page .features .products .product .stack .details .price p {
+  font-size: 20px;
+  font-weight: 600;
+  margin: auto 4px;
+}
+.page .features .products .product .stack .details .price .maximum {
+  width: auto;
+  height: 56px;
+  display: flex;
+  position: relative;
+}
+.page .features .products .product .stack .details .price .maximum p {
+  font-size: 14px;
+  font-weight: 400;
+  margin: auto 4px;
+  text-decoration: line-through;
+}
+.page .features .products .product .stack .details .price .discount {
+  width: auto;
+  height: 56px;
+  display: flex;
+  position: relative;
+}
+.page .features .products .product .stack .details .price .discount p {
+  color: #000;
+  font-size: 14px;
+  font-weight: 600;
+  margin: auto 4px;
+}
+.page .features .products .product .stack .details .price:empty {
+  width: calc(100% - 8px);
+  height: 48px;
+  margin: 4px;
+  border-radius: 8px;
+  background: #f6f8fa;
+}
+.page .features .products .product .stack .details .edit {
+  position: absolute;
+  visibility: hidden;
+  width: 56px;
+  height: 56px;
+  top: -4px;
+  right: -4px;
+}
+.page .features .products .product .stack .details .edit .graph {
+  width: 40px;
+  height: 40px;
+  margin: 8px;
+  display: flex;
+  position: absolute;
+}
+.page .features .products .product .stack .details .edit .graph .icon {
+  width: 18px;
+  height: 18px;
+  margin: auto;
+}
+.page .features .products .product .stack .details .edit active {
+  display: flex;
+  height: 48px;
+  width: 48px;
+  margin: 4px;
+  border-radius: 8px;
+  background: #fff;
+  z-index: -1;
+  background: #fff;
+}
+.page .features .products .product .stack:hover .details .edit {
+  visibility: visible;
+}
+.page .features .products .product:hover {
+  width: 392px;
+  height: 168px;
+  background: whitesmoke;
+  border-radius: 8px;
+}
+.page .features .products .add {
+  width: 392px;
+  height: 56px;
+  margin-top: 4px;
+}
+.page .features .products .add .item {
+  width: 384px;
+  height: 48px;
+  background-color: #fff;
+  margin: auto;
+  display: flex;
+  border-radius: 8px;
+}
+.page .features .products .add .item .compose {
+  width: 384px;
+  height: 48px;
+  display: flex;
+}
+.page .features .products .add .item .compose .title {
+  width: auto;
+  height: auto;
+  display: flex;
+  margin: auto;
+}
+.page .features .products .add .item .compose .title .graph {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  margin: auto;
+}
+.page .features .products .add .item .compose .title .graph .icon {
+  width: 24px;
+  height: 24px;
+  margin: auto;
+}
+.page .features .products .add .item .compose .title p {
+  font-size: 18px;
+  font-weight: 600;
+  margin: auto;
+}
+.page .features .products .add .item:hover .compose {
+  width: 376px;
+  height: 40px;
+  display: flex;
+  margin: auto;
+  border-radius: 8px;
+  background-color: #f6f8fa;
+}
+.page .features .copyright {
+  width: 100%;
+  height: 56px;
+  position: fixed;
+  z-index: -1;
+  bottom: 56px;
+}
+.page .features .copyright .acts {
+  font-size: 12px;
+  margin: 0px;
+  position: relative;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.page .features .copyright span {
+  font-weight: 700;
+}
+.page .features .shortcuts {
+  width: 392px;
+  height: 56px;
+  position: fixed;
+  background: #f6f8fa;
+  bottom: 0px;
+}
+.page .features .shortcuts .center {
+  width: calc(100% - 8px);
+  height: 48px;
+  margin: 4px;
+  background: #ffffff;
+  border-radius: 8px;
+  display: flex;
+}
+.page .features .shortcuts .center .mode {
+  width: auto;
+  height: auto;
+  display: flex;
+}
+.page .features .shortcuts .center .mode .graph {
+  width: 48px;
+  height: 48px;
+  margin: 0px;
+  display: flex;
+  position: relative;
+}
+.page .features .shortcuts .center .mode .graph .icon {
+  width: 24px;
+  height: 24px;
+  margin: auto;
+}
+.page .features .shortcuts .center .calendar {
+  width: calc(100% - 112px);
+  height: auto;
+  display: flex;
+  position: absolute;
+  right: 56px;
+}
+.page .features .shortcuts .center .calendar .graph {
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  right: 0px;
+  margin: 0px;
+  display: flex;
+}
+.page .features .shortcuts .center .calendar .graph .icon {
+  width: 24px;
+  height: 24px;
+  margin: auto;
+}
+.page .features .shortcuts .center .calendar .date {
+  width: auto;
+  height: auto;
+  margin: auto;
+}
+.page .features .shortcuts .center .scheduals {
+  width: auto;
+  height: auto;
+  position: absolute;
+  display: flex;
+  right: 4px;
+}
+.page .features .shortcuts .center .scheduals .graph {
+  width: 48px;
+  height: 48px;
+  margin: 0px;
+  display: flex;
+  position: relative;
+}
+.page .features .shortcuts .center .scheduals .graph .icon {
+  width: 24px;
+  height: 24px;
+  margin: auto;
+}
+.page .feed {
+  width: 840px;
+  margin-left: 30px;
+}
+.page .feed .sales {
+  width: calc(100% - 8px);
+  height: 272px;
+  position: relative;
+  margin: 4px;
+  background: #ffffff;
+  border-radius: 8px;
+}
+.page .feed .sales .chart {
+  height: 272px;
+}
+.page .feed .sales .chart .week {
+  width: calc(100% - 40px);
+  height: calc(100% - 40px);
+  padding: 20px 76px;
+}
+.page .feed .sales .chart .weeks {
+  width: calc(100% - 40px);
+  height: calc(100% - 40px);
+  padding: 20px;
+}
+.page .feed .sales .chart .month {
+  width: calc(100% - 40px);
+  height: calc(100% - 40px);
+  padding: 20px;
+}
+.page .feed .sales .chart .months {
+  width: calc(100% - 40px);
+  height: calc(100% - 40px);
+  padding: 20px;
+}
+.page .feed .sales .chart .year {
+  width: calc(100% - 40px);
+  height: calc(100% - 40px);
+  padding: 20px;
+}
+.page .feed .sales .chart .years {
+  width: calc(100% - 40px);
+  height: calc(100% - 40px);
+  padding: 20px;
+}
+.page .feed .performance {
+  width: 840px;
+  height: 336px;
+  position: relative;
+}
+.page .feed .performance .stacks {
+  width: 840px;
+  height: 336px;
+  display: grid;
+}
+.page .feed .performance .stacks .soldout {
+  width: 832px;
+  height: 272px;
+  margin: 4px;
+  border-radius: 8px;
+  background: #fff;
+}
+.page .feed .performance .stacks .soldout .chart {
+  height: 272px;
+}
+.page .feed .performance .stacks .soldout .chart .week {
+  width: calc(100% - 40px);
+  height: calc(100% - 40px);
+  padding: 4px;
+}
+.page .feed .performance .stacks .soldout .chart .month {
+  width: calc(100% - 40px);
+  height: calc(100% - 40px);
+  padding: 4px;
+}
+.page .feed .performance .stacks .soldout .chart .year {
+  width: calc(100% - 40px);
+  height: calc(100% - 40px);
+  padding: 4px;
+}
+.page .feed .performance .stacks .pickup {
+  width: 840px;
+  height: 56px;
+  display: flex;
+}
+.page .feed .performance .stacks .pickup .stack {
+  width: 272px;
+  height: 48px;
+  margin: 4px;
+  display: flex;
+  border-radius: 8px;
+  background: #fff;
+}
+.page .feed .performance .stacks .pickup .stack .graph {
+  width: 264px;
+  height: 40px;
+  margin: 4px;
+  display: flex;
+  z-index: 1;
+}
+.page .feed .performance .stacks .pickup .stack .graph p {
+  margin: auto;
+  z-index: 1;
+}
+.page .feed .performance .stacks .pickup .stack .active {
+  position: absolute;
+  width: 264px;
+  height: 40px;
+  margin: 4px;
+  border-radius: 8px;
+  display: flex;
+  background: #f6f8fa;
+}
+.page .feed .calendar {
+  width: calc(100% - 8px);
+  height: 56px;
+  display: flex;
+}
+.page .feed .calendar .previous {
+  position: absolute;
+  visibility: hidden;
+}
+.page .feed .calendar .previous .graph {
+  width: 48px;
+  height: 48px;
+  margin: 4px;
+  display: flex;
+  position: relative;
+}
+.page .feed .calendar .previous .graph .icon {
+  width: 24px;
+  height: 24px;
+  margin: auto;
+}
+.page .feed .calendar .calendar {
+  position: relative;
+  visibility: hidden;
+  margin: 0px -56px;
+}
+.page .feed .calendar .calendar .graph {
+  width: 48px;
+  height: 48px;
+  margin: 4px;
+  display: flex;
+  position: relative;
+}
+.page .feed .calendar .calendar .graph .icon {
+  width: 20px;
+  height: 20px;
+  margin: auto;
+}
+.page .feed .calendar .week {
+  display: flex;
+  width: 100%;
+  height: 48px;
+  margin: 4px;
+  background: #fff;
+  border-radius: 8px;
+}
+.page .feed .calendar .week .day .graph {
+  width: 48px;
+  height: 48px;
+  margin: 0px 32px;
+  display: flex;
+  position: relative;
+}
+.page .feed .calendar .week .day .graph .icon {
+  width: 24px;
+  height: 24px;
+  margin: auto;
+}
+.page .feed .calendar .week .day .icon {
+  display: flex;
+}
+.page .feed .calendar .week .day p {
+  text-align: center;
+  margin: auto;
+}
+.page .feed .calendar .week .day .active {
+  display: flex;
+  height: 40px;
+  width: 40px;
+  margin: -44px auto;
+  border-radius: 8px;
+  background: #fff;
+  z-index: -1;
+  background: #f6f8fa;
+}
+.page .feed .calendar .week .first .graph {
+  width: 48px;
+  height: 48px;
+  margin: 0px 28px 0px 60px;
+  display: flex;
+  position: relative;
+}
+.page .feed .calendar .week .first .graph .icon {
+  width: 24px;
+  height: 24px;
+  margin: auto;
+}
+.page .feed .calendar .week .first .icon {
+  display: flex;
+}
+.page .feed .calendar .week .first p {
+  text-align: center;
+  margin: auto;
+}
+.page .feed .calendar .week .first .active {
+  display: flex;
+  height: 40px;
+  width: 40px;
+  margin: -44px 8px 8px 64px;
+  border-radius: 8px;
+  background: #fff;
+  z-index: -1;
+  background: #f6f8fa;
+}
+.page .feed .calendar .week .last .graph {
+  width: 48px;
+  height: 48px;
+  margin: 0px 60px 0px 28px;
+  display: flex;
+  position: relative;
+}
+.page .feed .calendar .week .last .graph .icon {
+  width: 24px;
+  height: 24px;
+  margin: auto;
+}
+.page .feed .calendar .week .last .icon {
+  display: flex;
+}
+.page .feed .calendar .week .last p {
+  text-align: center;
+  margin: auto;
+}
+.page .feed .calendar .week .last .active {
+  display: flex;
+  height: 40px;
+  width: 40px;
+  margin: -44px 8px 8px 32px;
+  border-radius: 8px;
+  background: #fff;
+  z-index: -1;
+  background: #f6f8fa;
+}
+.page .feed .calendar .calendar .previous .week:hover {
+  visibility: visible;
+}
+.page .feed .calendar .weeks {
+  display: flex;
+  width: 100%;
+  height: 48px;
+  margin: 4px;
+  background: #fff;
+  border-radius: 8px;
+}
+.page .feed .calendar .weeks .day .graph {
+  width: 48px;
+  height: 48px;
+  margin: 0px 4px;
+  display: flex;
+  position: relative;
+}
+.page .feed .calendar .weeks .day .graph .icon {
+  width: 24px;
+  height: 24px;
+  margin: auto;
+}
+.page .feed .calendar .weeks .day .icon {
+  display: flex;
+}
+.page .feed .calendar .weeks .day p {
+  text-align: center;
+  margin: auto;
+}
+.page .feed .calendar .weeks .day .active {
+  display: flex;
+  height: 40px;
+  width: 40px;
+  margin: -44px 8px 8px 8px;
+  border-radius: 8px;
+  background: #fff;
+  z-index: -1;
+  background: #f6f8fa;
+}
+.page .feed .calendar .weeks .first .graph {
+  width: 48px;
+  height: 48px;
+  margin: 0px 4px 0px 0px;
+  display: flex;
+  position: relative;
+}
+.page .feed .calendar .weeks .first .graph .icon {
+  width: 24px;
+  height: 24px;
+  margin: auto;
+}
+.page .feed .calendar .weeks .first .icon {
+  display: flex;
+}
+.page .feed .calendar .weeks .first p {
+  text-align: center;
+  margin: auto;
+}
+.page .feed .calendar .weeks .first .active {
+  display: flex;
+  height: 40px;
+  width: 40px;
+  margin: -44px 8px 8px 4px;
+  border-radius: 8px;
+  background: #fff;
+  z-index: -1;
+  background: #f6f8fa;
+}
+.page .feed .information {
+  width: 100%;
+  height: 112px;
+  display: flex;
+}
+.page .feed .information .stack {
+  width: 272px;
+  height: 104px;
+  margin: 4px;
+  background: #fff;
+  border-radius: 8px;
+}
+.page .feed .information .stack .head {
+  width: calc(100% - 8px);
+  height: 48px;
+  margin: 4px;
+  display: flex;
+}
+.page .feed .information .stack .head .graph {
+  width: 48px;
+  height: 48px;
+  margin: 0px;
+  display: flex;
+  position: relative;
+}
+.page .feed .information .stack .head .graph .icon {
+  width: 20px;
+  height: 20px;
+  margin: auto;
+}
+.page .feed .information .stack .head .title {
+  width: calc(100% - 112px);
+  height: auto;
+  margin: auto;
+  font-size: 18px;
+  font-weight: 600;
+}
+.page .feed .information .stack .head .title p {
+  margin: 0px;
+  text-align: center;
+}
+.page .feed .information .stack .head .menu {
+  visibility: hidden;
+  position: absolute;
+}
+.page .feed .information .stack .total {
+  width: calc(100% - 8px);
+  height: 48px;
+  display: flex;
+  margin: 4px;
+}
+.page .feed .information .stack .total .graph {
+  width: 48px;
+  height: 48px;
+  margin: 0px 0px 0px 52px;
+  display: flex;
+  position: relative;
+}
+.page .feed .information .stack .total .graph .icon {
+  width: 20px;
+  height: 20px;
+  margin: auto;
+}
+.page .feed .information .stack .total .count {
+  width: auto;
+  height: auto;
+  margin: auto 0px;
+  font-size: 18px;
+  font-weight: 600;
+}
+.page .feed .information .stack .total .count p {
+  margin: 0px;
+}
+.page .feed .information .stack .details {
+  width: calc(100% - 8px);
+  height: 48px;
+  display: flex;
+  margin: 4px;
+}
+.page .feed .information .stack .details .counts {
+  font-size: 16px;
+  font-weight: 600;
+  display: flex;
+}
+.page .feed .information .stack .details .counts .count {
+  display: flex;
+}
+.page .feed .information .stack .details .counts .count .graph {
+  width: 48px;
+  height: 48px;
+  margin: 0px;
+  display: flex;
+  position: relative;
+}
+.page .feed .information .stack .details .counts .count .graph .icon {
+  width: 20px;
+  height: 20px;
+  margin: auto;
+}
+.page .feed .information .stack .details .counts .count .total {
+  height: auto;
+  margin: auto;
+}
+.page .feed .information .stack .details .counts .count .total p {
+  margin: 0px;
+}
+.page .feed .information .stack .details .counts .up .graph {
+  width: 48px;
+  height: 48px;
+  margin: 0px;
+  display: flex;
+  position: relative;
+}
+.page .feed .information .stack .details .counts .up .graph .icon {
+  width: 20px;
+  height: 20px;
+  margin: auto;
+}
+.page .feed .information .stack .details .counts .down .graph {
+  width: 48px;
+  height: 48px;
+  margin: 0px;
+  display: flex;
+  position: relative;
+}
+.page .feed .information .stack .details .counts .down .graph .icon {
+  width: 20px;
+  height: 20px;
+  margin: auto;
+}
+.page .feed .information .stack:hover .head .menu {
+  visibility: visible;
+}
+.page .feed .buyers {
+  width: 840px;
+  height: 168px;
+  position: relative;
+  display: flex;
+}
+.page .feed .buyers .stacks {
+  width: auto;
+  height: 168px;
+  display: flex;
+  overflow-x: hidden;
+  position: relative;
+}
+.page .feed .buyers .stacks .stack {
+  width: 840px;
+  height: 168px;
+  position: relative;
+}
+.page .feed .buyers .stacks .stack .buyer {
+  width: 160px;
+  height: 160px;
+  margin: 4px;
+  display: grid;
+  background: #fff;
+}
+.page .feed .buyers .stacks .stack .buyer .profile {
+  width: 160px;
+  height: 112px;
+  margin: 4px auto;
+  display: flex;
+}
+.page .feed .buyers .stacks .stack .buyer .profile .picture {
+  width: 104px;
+  height: 104px;
+  margin: 4px auto;
+}
+.page .feed .buyers .stacks .stack .buyer .title {
+  width: 160px;
+  height: 56px;
+  display: flex;
+}
+.page .feed .buyers .stacks .stack .buyer .title p {
+  margin: auto;
+}
+.page .feed .ravenue {
+  width: 100%;
+  height: 336px;
+  position: relative;
+  margin-left: 26px;
+  background: #ffffff;
+  border-radius: 8px;
+}
+.page .feed .ravenue #ravenue {
+  width: calc(100% - 40px);
+  height: calc(100% - 40px);
+  padding: 26px;
+}
+.page .feed .receipts {
+  width: calc(100% - 8px);
+  height: auto;
+  position: relative;
+}
+.page .feed .receipts .head {
+  width: 100%;
+  height: 48px;
+  margin: 4px;
+  border-radius: 8px;
+  display: inline-flex;
+}
+.page .feed .receipts .head .receipt {
+  display: none;
+}
+.page .feed .receipts .head .receipt .graph {
+  width: 48px;
+  height: 48px;
+  margin: auto;
+  display: flex;
+  position: relative;
+}
+.page .feed .receipts .head .receipt .graph .icon {
+  width: 24px;
+  height: 24px;
+  margin: auto;
+}
+.page .feed .receipts .head .title {
+  width: auto;
+  height: auto;
+  display: inline-flex;
+}
+.page .feed .receipts .head .title p {
+  height: fit-content;
+  font-size: 18px;
+  font-weight: 600;
+  margin: auto 8px;
+}
+.page .feed .receipts .head .action {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  position: absolute;
+  visibility: hidden;
+  right: -4px;
+}
+.page .feed .receipts .head .action .graph {
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  right: 0px;
+  margin: auto;
+  display: flex;
+  z-index: 1;
+}
+.page .feed .receipts .head .action .graph .icon {
+  width: 24px;
+  height: 24px;
+  margin: auto;
+}
+.page .feed .receipts .head .action .active {
+  display: flex;
+  height: 40px;
+  width: 40px;
+  margin: auto;
+  border-radius: 8px;
+  background: #fff;
+  z-index: -1;
+  z-index: 0;
+  background: #f6f8fa;
+  visibility: hidden;
+}
+.page .feed .receipts .head .action:hover .active {
+  visibility: visible;
+}
+.page .feed .receipts .head .filter {
+  width: auto;
+  height: 48px;
+  display: flex;
+  position: absolute;
+  right: 0px;
+}
+.page .feed .receipts .head .filter .title {
+  width: auto;
+  height: 40px;
+  visibility: hidden;
+  display: inline-flex;
+  background: #f6f8fa;
+  border-radius: 8px 0px 0px 8px;
+  padding: 0px 24px;
+  margin: 4px -8px 4px 4px;
+}
+.page .feed .receipts .head .filter .title p {
+  height: fit-content;
+  font-size: 12px;
+  margin: auto 0px;
+}
+.page .feed .receipts .head .filter .action {
+  width: auto;
+  height: auto;
+}
+.page .feed .receipts .head .filter .action .graph {
+  width: 48px;
+  height: 48px;
+  margin: auto;
+  display: flex;
+  position: relative;
+}
+.page .feed .receipts .head .filter .action .graph .icon {
+  width: 24px;
+  height: 24px;
+  margin: auto;
+}
+.page .feed .receipts .head .filter .action .active {
+  display: flex;
+  height: 40px;
+  width: 40px;
+  margin: -44px auto;
+  border-radius: 8px;
+  background: #fff;
+  z-index: -1;
+  background: #f6f8fa;
+}
+.page .feed .receipts .head .filter:hover .title {
+  visibility: visible;
+}
+.page .feed .receipts .head:hover .action {
+  visibility: visible;
+}
+.page .feed .receipts .stacks {
+  height: auto;
+  width: 100%;
+  margin: 0px;
+}
+.page .feed .receipts .stacks .receipt {
+  width: 100%;
+  height: 48px;
+  margin: 4px;
+  border-radius: 8px;
+  background: #fff;
+  display: inline-flex;
+}
+.page .feed .receipts .stacks .receipt .action .graph {
+  width: 48px;
+  height: 48px;
+  margin: auto;
+  display: flex;
+  position: relative;
+}
+.page .feed .receipts .stacks .receipt .action .graph .icon {
+  width: 24px;
+  height: 24px;
+  margin: auto;
+}
+.page .feed .receipts .stacks .receipt .title {
+  width: auto;
+  height: auto;
+  display: inline-flex;
+}
+.page .feed .receipts .stacks .receipt .title p {
+  height: fit-content;
+  font-size: 16px;
+  margin: auto 8px;
+}
+.page .feed .receipts .stacks .receipt .timestamp {
+  width: 100%;
+  height: 48px;
+  position: absolute;
+}
+.page .feed .receipts .stacks .receipt .timestamp p {
+  text-align: center;
+}
+.page .feed .receipts .stacks .receipt .amount {
+  width: auto;
+  height: auto;
+  position: absolute;
+  display: flex;
+  right: 56px;
+}
+.page .feed .receipts .stacks .receipt .view {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  position: absolute;
+  visibility: hidden;
+  right: -4px;
+}
+.page .feed .receipts .stacks .receipt .view .graph {
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  right: 0px;
+  margin: auto;
+  display: flex;
+  z-index: 1;
+}
+.page .feed .receipts .stacks .receipt .view .graph .icon {
+  width: 18px;
+  height: 18px;
+  margin: auto;
+}
+.page .feed .receipts .stacks .receipt .view .active {
+  display: flex;
+  height: 40px;
+  width: 40px;
+  margin: auto;
+  border-radius: 8px;
+  background: #fff;
+  z-index: -1;
+  z-index: 0;
+  background: #f6f8fa;
+  visibility: hidden;
+}
+.page .feed .receipts .stacks .receipt .view:hover .active {
+  visibility: visible;
+}
+.page .feed .receipts .stacks .receipt:hover .view {
+  visibility: visible;
+}
+.page .feed .employees {
+  width: calc(100% - 8px);
+  height: auto;
+  position: relative;
+}
+.page .feed .employees .head {
+  width: 100%;
+  height: 48px;
+  margin: 4px;
+  border-radius: 8px;
+  display: inline-flex;
+}
+.page .feed .employees .head .employee {
+  display: none;
+}
+.page .feed .employees .head .employee .graph {
+  width: 48px;
+  height: 48px;
+  margin: auto;
+  display: flex;
+  position: relative;
+}
+.page .feed .employees .head .employee .graph .icon {
+  width: 24px;
+  height: 24px;
+  margin: auto;
+}
+.page .feed .employees .head .title {
+  width: auto;
+  height: auto;
+  display: inline-flex;
+}
+.page .feed .employees .head .title p {
+  height: fit-content;
+  font-size: 18px;
+  font-weight: 600;
+  margin: auto 8px;
+}
+.page .feed .employees .head .action {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  position: absolute;
+  visibility: hidden;
+  right: -4px;
+}
+.page .feed .employees .head .action .graph {
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  right: 0px;
+  margin: auto;
+  display: flex;
+  z-index: 1;
+}
+.page .feed .employees .head .action .graph .icon {
+  width: 24px;
+  height: 24px;
+  margin: auto;
+}
+.page .feed .employees .head .action .active {
+  display: flex;
+  height: 40px;
+  width: 40px;
+  margin: auto;
+  border-radius: 8px;
+  background: #fff;
+  z-index: -1;
+  z-index: 0;
+  background: #f6f8fa;
+  visibility: hidden;
+}
+.page .feed .employees .head .action:hover .active {
+  visibility: visible;
+}
+.page .feed .employees .head .filter {
+  width: auto;
+  height: 48px;
+  display: flex;
+  position: absolute;
+  right: 0px;
+}
+.page .feed .employees .head .filter .title {
+  width: auto;
+  height: 40px;
+  visibility: hidden;
+  display: inline-flex;
+  background: #f6f8fa;
+  border-radius: 8px 0px 0px 8px;
+  padding: 0px 24px;
+  margin: 4px -8px 4px 4px;
+}
+.page .feed .employees .head .filter .title p {
+  height: fit-content;
+  font-size: 12px;
+  margin: auto 0px;
+}
+.page .feed .employees .head .filter .action {
+  width: auto;
+  height: auto;
+}
+.page .feed .employees .head .filter .action .graph {
+  width: 48px;
+  height: 48px;
+  margin: auto;
+  display: flex;
+  position: relative;
+}
+.page .feed .employees .head .filter .action .graph .icon {
+  width: 24px;
+  height: 24px;
+  margin: auto;
+}
+.page .feed .employees .head .filter .action .active {
+  display: flex;
+  height: 40px;
+  width: 40px;
+  margin: -44px auto;
+  border-radius: 8px;
+  background: #fff;
+  z-index: -1;
+  background: #f6f8fa;
+}
+.page .feed .employees .head .filter:hover .title {
+  visibility: visible;
+}
+.page .feed .employees .head:hover .action {
+  visibility: visible;
+}
+.page .feed .employees .stacks {
+  height: auto;
+  width: 100%;
+  margin: 0px;
+}
+.page .feed .employees .stacks .employee {
+  width: 100%;
+  height: 48px;
+  margin: 4px;
+  border-radius: 8px;
+  background: #fff;
+  display: inline-flex;
+}
+.page .feed .employees .stacks .employee .action .graph {
+  width: 48px;
+  height: 48px;
+  margin: auto;
+  display: flex;
+  position: relative;
+}
+.page .feed .employees .stacks .employee .action .graph .icon {
+  width: 24px;
+  height: 24px;
+  margin: auto;
+}
+.page .feed .employees .stacks .employee .title {
+  width: auto;
+  height: auto;
+  display: inline-flex;
+}
+.page .feed .employees .stacks .employee .title p {
+  height: fit-content;
+  font-size: 16px;
+  margin: auto 8px;
+}
+.page .feed .employees .stacks .employee .timestamp {
+  width: 100%;
+  height: 48px;
+  position: absolute;
+}
+.page .feed .employees .stacks .employee .timestamp p {
+  text-align: center;
+}
+.page .feed .employees .stacks .employee .amount {
+  width: auto;
+  height: auto;
+  position: absolute;
+  display: flex;
+  right: 56px;
+}
+.page .feed .employees .stacks .employee .view {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  position: absolute;
+  visibility: hidden;
+  right: -4px;
+}
+.page .feed .employees .stacks .employee .view .graph {
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  right: 0px;
+  margin: auto;
+  display: flex;
+  z-index: 1;
+}
+.page .feed .employees .stacks .employee .view .graph .icon {
+  width: 18px;
+  height: 18px;
+  margin: auto;
+}
+.page .feed .employees .stacks .employee .view .active {
+  display: flex;
+  height: 40px;
+  width: 40px;
+  margin: auto;
+  border-radius: 8px;
+  background: #fff;
+  z-index: -1;
+  z-index: 0;
+  background: #f6f8fa;
+  visibility: hidden;
+}
+.page .feed .employees .stacks .employee .view:hover .active {
+  visibility: visible;
+}
+.page .feed .employees .stacks .employee:hover .view {
+  visibility: visible;
+}
+.page .old {
+  width: 840px;
+  margin-left: 30px;
+}
+.page .old .stacks {
+  width: 100%;
+  height: 280px;
+  display: flex;
+}
+.page .old .stacks .product {
+  width: 160px;
+  height: 272px;
+  padding: 4px;
+  border-radius: 8px;
+}
+.page .old .stacks .product .details {
+  display: grid;
+}
+.page .old .stacks .product .details .picture {
+  height: 216px;
+  width: 100%;
+  margin: 0px 0px 4px 0px;
+}
+.page .old .stacks .product .details .picture img {
+  height: 216px;
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+}
+.page .old .stacks .product .details .name {
+  width: auto;
+  height: 48px;
+  margin: 4px 0px;
+  display: flex;
+  background: #fff;
+  border-radius: 8px;
+}
+.page .old .stacks .product .details .name p {
+  margin: auto;
+}
+.page .old .stacks .product .details .size {
+  position: relative;
+  width: calc(100% - 8px);
+  height: 40px;
+  margin: 4px;
+  display: none;
+  bottom: 200px;
+  background: #fff;
+  border-radius: 8px;
+}
+.page .old .stacks .product .details .size .graph {
+  width: 40px;
+  height: 40px;
+  margin: auto;
+  display: flex;
+  position: false;
+}
+.page .old .stacks .product .details .size .graph .icon {
+  width: 18px;
+  height: 18px;
+  margin: auto;
+}
+.page .old .stacks .product .details .size .available {
+  display: flex;
+}
+.page .old .stacks .product .details .price {
+  position: relative;
+  width: calc(100% - 8px);
+  height: 40px;
+  margin: 4px;
+  display: none;
+  bottom: 108px;
+  background: #fff;
+  border-radius: 8px;
+}
+.page .old .stacks .product .details .price p {
+  margin: auto;
+}
+.page .old .stacks .product:hover .details .price {
+  display: flex;
+}
+.page .old .stacks .product:hover .details .size {
+  display: flex;
+}
+.page .current {
+  width: 840px;
+  height: 336px;
+  margin-left: 30px;
+  position: relative;
+}
+.page .current .product {
+  width: 832px;
+  height: 328px;
+  margin: 4px;
+  border-radius: 8px;
+  display: flex;
+}
+.page .current .product .picture {
+  width: 264px;
+  height: 320px;
+  padding: 4px;
+  margin-right: 4px;
+  border-radius: 8px;
+  background: #fff;
+}
+.page .current .product .picture img {
+  width: 264px;
+  height: 320px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+.page .current .product .detail {
+  width: 552px;
+  position: relative;
+  background: white;
+  border-radius: 8px;
+  margin-left: 4px;
+}
+.page .current .product .detail .title {
+  width: 100%;
+  height: 56px;
+  display: flex;
+  position: relative;
+  margin: -4px 0px 0px;
+}
+.page .current .product .detail .title p {
+  font-size: 18px;
+  font-weight: 600;
+  margin: auto 8px;
+}
+.page .current .product .detail .subtitle {
+  width: 100%;
+  height: 56px;
+  display: flex;
+  position: relative;
+}
+.page .current .product .detail .subtitle p {
+  font-size: 16px;
+  font-weight: 400;
+  margin: auto 8px;
+}
+.page .current .product .detail .measurements {
+  width: auto;
+  height: 56px;
+  margin-left: -4px;
+  display: flex;
+  position: relative;
+}
+.page .current .product .detail .measurements p {
+  font-size: 14px;
+  font-weight: 400;
+  margin: auto 8px;
+}
+.page .current .product .detail .measurements .stacks {
+  width: auto;
+  height: 56px;
+  display: flex;
+}
+.page .current .product .detail .measurements .stacks .measurement {
+  width: 112px;
+  height: 56px;
+  display: flex;
+}
+.page .current .product .detail .measurements .stacks .measurement .stack {
+  border: 1px solid #8D8D8D;
+  width: 86px;
+  height: 38px;
+  border-radius: 8px;
+  margin: auto;
+  display: flex;
+}
+.page .current .product .detail .measurements .stacks .measurement .stack .size {
+  width: 38px;
+  height: 38px;
+  margin-right: 8px;
+  display: flex;
+}
+.page .current .product .detail .measurements .stacks .measurement .stack .size p {
+  font-size: 12px;
+  font-weight: 200;
+  margin: auto;
+}
+.page .current .product .detail .measurements .stacks .measurement .stack .stock {
+  width: 38px;
+  height: 38px;
+  margin-left: 8px;
+  display: flex;
+}
+.page .current .product .detail .measurements .stacks .measurement .stack .stock p {
+  font-size: 12px;
+  font-weight: 200;
+  margin: auto;
+}
+.page .current .product .detail .measurements .stacks .measurement .stack span {
+  height: 60%;
+  width: 1px;
+  margin: auto;
+  position: relative;
+  border-left: 1px solid #8D8D8D;
+}
+.page .current .product .detail .measurements .stacks .more {
+  width: 56px;
+  height: 56px;
+  position: absolute;
+  visibility: hidden;
+  right: -4px;
+  display: flex;
+}
+.page .current .product .detail .measurements .stacks .more .graph {
+  width: 40px;
+  height: 40px;
+  margin: auto;
+  display: flex;
+  position: false;
+}
+.page .current .product .detail .measurements .stacks .more .graph .icon {
+  width: 20px;
+  height: 20px;
+  margin: auto;
+}
+.page .current .product .detail .measurements .stacks:hover .more {
+  visibility: visible;
+}
+.page .current .product .detail .measurements .stacks:hover .more .graph {
+  background: #f6f8fa;
+  border-radius: 8px;
+}
+.page .current .product .detail .info {
+  width: auto;
+  height: 56px;
+  display: flex;
+}
+.page .current .product .detail .info .code {
+  width: 50%;
+  display: flex;
+}
+.page .current .product .detail .info .code p {
+  font-size: 16px;
+  font-weight: 400;
+  margin: auto 8px;
+}
+.page .current .product .detail .info .seller {
+  width: 50%;
+  display: flex;
+}
+.page .current .product .detail .info .seller p {
+  font-size: 16px;
+  font-weight: 400;
+  margin: auto 12px;
+}
+.page .current .product .detail .similar {
+  width: auto;
+  height: 56px;
+  display: flex;
+}
+.page .current .product .detail .price {
+  width: auto;
+  height: 56px;
+  display: flex;
+  position: relative;
+}
+.page .current .product .detail .price p {
+  font-size: 20px;
+  font-weight: 600;
+  margin: auto 8px;
+}
+.page .current .product .detail .price .maximum {
+  width: auto;
+  height: 56px;
+  display: flex;
+  position: relative;
+}
+.page .current .product .detail .price .maximum p {
+  font-size: 14px;
+  font-weight: 400;
+  margin: auto 12px;
+  text-decoration: line-through;
+}
+.page .current .product .detail .price .discount {
+  width: auto;
+  height: 56px;
+  display: flex;
+  position: relative;
+}
+.page .current .product .detail .price .discount p {
+  color: #000;
+  font-size: 14px;
+  font-weight: 600;
+  margin: auto 12px;
+}
+.page .current .product .detail .edit {
+  position: absolute;
+  visibility: hidden;
+  width: 56px;
+  height: 56px;
+  top: -4px;
+  right: -4px;
+}
+.page .current .product .detail .edit .graph {
+  width: 40px;
+  height: 40px;
+  margin: 8px;
+  display: flex;
+  position: absolute;
+}
+.page .current .product .detail .edit .graph .icon {
+  width: 18px;
+  height: 18px;
+  margin: auto;
+}
+.page .current .product .detail .edit active {
+  display: flex;
+  height: 48px;
+  width: 48px;
+  margin: 4px;
+  border-radius: 8px;
+  background: #fff;
+  z-index: -1;
+  background: #fff;
+}
+.page .current .product:hover .detail .edit {
+  visibility: visible;
+}
+.page .current .preview {
+  width: 840px;
+  height: 168px;
+  position: relative;
+}
+.page .current .preview .thumbnails {
+  width: 272px;
+  height: 160px;
+  margin: 4px;
+  background: #fff;
+  border-radius: 8px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+}
+.page .current .preview .thumbnails .thumbnail {
+  width: 96px;
+  height: 152px;
+  padding: 4px;
+}
+.page .current .preview .thumbnails .thumbnail img {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+}
+.page .current .performance {
+  width: 840px;
+  height: 392px;
+  position: relative;
+}
+.page .current .performance .stacks {
+  width: 840px;
+  height: 336px;
+  display: grid;
+}
+.page .current .performance .stacks .head {
+  width: 832px;
+  height: 48px;
+  margin: 4px;
+  background: #fff;
+  border-radius: 8px;
+  display: inline-flex;
+}
+.page .current .performance .stacks .head .receipt .graph {
+  width: 48px;
+  height: 48px;
+  margin: auto;
+  display: flex;
+  position: relative;
+}
+.page .current .performance .stacks .head .receipt .graph .icon {
+  width: 20px;
+  height: 20px;
+  margin: auto;
+}
+.page .current .performance .stacks .head .title {
+  width: auto;
+  height: auto;
+  display: inline-flex;
+}
+.page .current .performance .stacks .head .title p {
+  height: fit-content;
+  font-size: 18px;
+  font-weight: 600;
+  margin: auto 8px;
+}
+.page .current .performance .stacks .head .action {
+  position: absolute;
+  visibility: visible;
+  width: 56px;
+  height: 56px;
+  top: 0px;
+  right: 0px;
+}
+.page .current .performance .stacks .head .action .graph {
+  width: 40px;
+  height: 40px;
+  margin: 8px;
+  display: flex;
+  position: absolute;
+}
+.page .current .performance .stacks .head .action .graph .icon {
+  width: 18px;
+  height: 18px;
+  margin: auto;
+}
+.page .current .performance .stacks .head .action active {
+  display: flex;
+  height: 48px;
+  width: 48px;
+  margin: 4px;
+  border-radius: 8px;
+  background: #fff;
+  z-index: -1;
+  background: #fff;
+}
+.page .current .performance .stacks .head .filter {
+  width: auto;
+  height: 48px;
+  display: flex;
+  position: absolute;
+  right: 0px;
+}
+.page .current .performance .stacks .head .filter .title {
+  width: auto;
+  height: 40px;
+  visibility: hidden;
+  display: flex;
+  position: relative;
+  background: #f6f8fa;
+  border-radius: 8px 0px 0px 8px;
+  padding: 0px 24px;
+  margin: 4px -8px 4px 4px;
+}
+.page .current .performance .stacks .head .filter .title p {
+  height: fit-content;
+  font-size: 12px;
+  margin: auto 0px;
+}
+.page .current .performance .stacks .head .filter .action {
+  width: 48px;
+  height: 48px;
+  position: relative;
+}
+.page .current .performance .stacks .head .filter .action .graph {
+  width: 48px;
+  height: 48px;
+  margin: auto;
+  display: flex;
+  position: relative;
+}
+.page .current .performance .stacks .head .filter .action .graph .icon {
+  width: 24px;
+  height: 24px;
+  margin: auto;
+}
+.page .current .performance .stacks .head .filter .action .active {
+  display: flex;
+  height: 40px;
+  width: 40px;
+  margin: -44px auto;
+  border-radius: 8px;
+  background: #fff;
+  z-index: -1;
+  background: #f6f8fa;
+}
+.page .current .performance .stacks .head .filter:hover .title {
+  visibility: visible;
+}
+.page .current .performance .stacks .head:hover .action {
+  visibility: visible;
+}
+.page .current .performance .stacks .soldout {
+  width: 832px;
+  height: 272px;
+  margin: 4px;
+  border-radius: 8px;
+  background: #fff;
+}
+.page .current .performance .stacks .soldout .chart {
+  height: 272px;
+}
+.page .current .performance .stacks .soldout .chart .week {
+  width: calc(100% - 40px);
+  height: calc(100% - 40px);
+  padding: 4px;
+}
+.page .current .performance .stacks .soldout .chart .month {
+  width: calc(100% - 40px);
+  height: calc(100% - 40px);
+  padding: 4px;
+}
+.page .current .performance .stacks .soldout .chart .year {
+  width: calc(100% - 40px);
+  height: calc(100% - 40px);
+  padding: 4px;
+}
+.page .current .performance .stacks .pickup {
+  width: 840px;
+  height: 56px;
+  display: flex;
+}
+.page .current .performance .stacks .pickup .stack {
+  width: 272px;
+  height: 48px;
+  margin: 4px;
+  display: flex;
+  border-radius: 8px;
+  background: #fff;
+}
+.page .current .performance .stacks .pickup .stack .graph {
+  width: 264px;
+  height: 40px;
+  margin: 4px;
+  display: flex;
+  z-index: 1;
+}
+.page .current .performance .stacks .pickup .stack .graph p {
+  margin: auto;
+  z-index: 1;
+}
+.page .current .performance .stacks .pickup .stack .active {
+  position: absolute;
+  width: 264px;
+  height: 40px;
+  margin: 4px;
+  border-radius: 8px;
+  display: flex;
+  background: #f6f8fa;
+}
+.page .current .performance .stacks .cal {
+  width: 840px;
+  height: 56px;
+  display: flex;
+}
+.page .current .performance .stacks .cal .stack {
+  width: 160px;
+  height: 48px;
+  margin: 4px;
+  display: flex;
+  border-radius: 8px;
+  background: #fff;
+}
+.page .current .performance .stacks .cal .stack .graph {
+  width: 152px;
+  height: 40px;
+  margin: 4px;
+  display: flex;
+  z-index: 1;
+}
+.page .current .performance .stacks .cal .stack .graph p {
+  margin: auto;
+  z-index: 1;
+}
+.page .current .performance .stacks .cal .stack .active {
+  position: absolute;
+  width: 152px;
+  height: 40px;
+  margin: 4px;
+  border-radius: 8px;
+  display: flex;
+  background: #f6f8fa;
+}
+.page .current .buyers {
+  width: 840px;
+  height: 168px;
+  position: relative;
+  display: flex;
+}
+.page .current .buyers .stacks {
+  width: auto;
+  height: 168px;
+  display: flex;
+  position: relative;
+}
+.page .current .buyers .stacks .stack {
+  width: 840px;
+  height: 168px;
+  display: flex;
+  position: relative;
+}
+.page .current .buyers .stacks .stack .buyer {
+  width: 160px;
+  height: 160px;
+  margin: 4px;
+  background: #fff;
+  border-radius: 8px;
+}
+.page .current .buyers .stacks .stack .buyer .profile {
+  width: 160px;
+  height: 52px;
+  display: flex;
+}
+.page .current .buyers .stacks .stack .buyer .profile .picture {
+  width: 48px;
+  height: 48px;
+  margin: auto;
+  border-radius: 50%;
+}
+.page .current .buyers .stacks .stack .buyer .profile .picture img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 4px;
+}
+.page .current .buyers .stacks .stack .buyer .title {
+  width: 160px;
+  height: 56px;
+  display: flex;
+}
+.page .current .buyers .stacks .stack .buyer .title p {
+  margin: auto;
+}
+.page .current .receipts {
+  width: calc(100% - 8px);
+  height: auto;
+  margin-bottom: 4px;
+  position: relative;
+}
+.page .current .receipts .head {
+  width: 100%;
+  height: 48px;
+  margin: 4px;
+  border-radius: 8px;
+  display: inline-flex;
+}
+.page .current .receipts .head .receipt {
+  display: none;
+}
+.page .current .receipts .head .receipt .graph {
+  width: 48px;
+  height: 48px;
+  margin: auto;
+  display: flex;
+  position: relative;
+}
+.page .current .receipts .head .receipt .graph .icon {
+  width: 24px;
+  height: 24px;
+  margin: auto;
+}
+.page .current .receipts .head .title {
+  width: auto;
+  height: auto;
+  display: inline-flex;
+}
+.page .current .receipts .head .title p {
+  height: fit-content;
+  font-size: 18px;
+  font-weight: 600;
+  margin: auto 8px;
+}
+.page .current .receipts .head .action {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  position: absolute;
+  visibility: hidden;
+  right: -4px;
+}
+.page .current .receipts .head .action .graph {
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  right: 0px;
+  margin: auto;
+  display: flex;
+  z-index: 1;
+}
+.page .current .receipts .head .action .graph .icon {
+  width: 24px;
+  height: 24px;
+  margin: auto;
+}
+.page .current .receipts .head .action .active {
+  display: flex;
+  height: 40px;
+  width: 40px;
+  margin: auto;
+  border-radius: 8px;
+  background: #fff;
+  z-index: -1;
+  z-index: 0;
+  background: #f6f8fa;
+  visibility: hidden;
+}
+.page .current .receipts .head .action:hover .active {
+  visibility: visible;
+}
+.page .current .receipts .head .filter {
+  width: auto;
+  height: 48px;
+  display: flex;
+  position: absolute;
+  right: 0px;
+}
+.page .current .receipts .head .filter .title {
+  width: auto;
+  height: 40px;
+  visibility: hidden;
+  display: flex;
+  position: relative;
+  background: #f6f8fa;
+  border-radius: 8px 0px 0px 8px;
+  padding: 0px 24px;
+  margin: 4px -8px 4px 4px;
+}
+.page .current .receipts .head .filter .title p {
+  height: fit-content;
+  font-size: 12px;
+  margin: auto 0px;
+}
+.page .current .receipts .head .filter .action {
+  width: 48px;
+  height: 48px;
+  position: relative;
+}
+.page .current .receipts .head .filter .action .graph {
+  width: 48px;
+  height: 48px;
+  margin: auto;
+  display: flex;
+  position: relative;
+}
+.page .current .receipts .head .filter .action .graph .icon {
+  width: 24px;
+  height: 24px;
+  margin: auto;
+}
+.page .current .receipts .head .filter .action .active {
+  display: flex;
+  height: 40px;
+  width: 40px;
+  margin: -44px auto;
+  border-radius: 8px;
+  background: #fff;
+  z-index: -1;
+  background: #f6f8fa;
+}
+.page .current .receipts .head .filter:hover .title {
+  visibility: visible;
+}
+.page .current .receipts .head:hover .action {
+  visibility: visible;
+}
+.page .current .receipts .stacks {
+  height: auto;
+  width: 100%;
+  margin: 0px;
+}
+.page .current .receipts .stacks .receipt {
+  width: 100%;
+  height: 48px;
+  margin: 4px;
+  border-radius: 8px;
+  background: #fff;
+  display: inline-flex;
+}
+.page .current .receipts .stacks .receipt .action .graph {
+  width: 48px;
+  height: 48px;
+  margin: auto;
+  display: flex;
+  position: relative;
+}
+.page .current .receipts .stacks .receipt .action .graph .icon {
+  width: 24px;
+  height: 24px;
+  margin: auto;
+}
+.page .current .receipts .stacks .receipt .title {
+  width: auto;
+  height: auto;
+  display: inline-flex;
+}
+.page .current .receipts .stacks .receipt .title p {
+  height: fit-content;
+  font-size: 16px;
+  margin: auto 8px;
+}
+.page .current .receipts .stacks .receipt .timestamp {
+  width: 100%;
+  height: 48px;
+  position: absolute;
+}
+.page .current .receipts .stacks .receipt .timestamp p {
+  text-align: center;
+}
+.page .current .receipts .stacks .receipt .amount {
+  width: auto;
+  height: auto;
+  position: absolute;
+  display: flex;
+  right: 56px;
+}
+.page .current .receipts .stacks .receipt .view {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  position: absolute;
+  visibility: hidden;
+  right: -4px;
+}
+.page .current .receipts .stacks .receipt .view .graph {
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  right: 0px;
+  margin: auto;
+  display: flex;
+  z-index: 1;
+}
+.page .current .receipts .stacks .receipt .view .graph .icon {
+  width: 18px;
+  height: 18px;
+  margin: auto;
+}
+.page .current .receipts .stacks .receipt .view .active {
+  display: flex;
+  height: 40px;
+  width: 40px;
+  margin: auto;
+  border-radius: 8px;
+  background: #fff;
+  z-index: -1;
+  z-index: 0;
+  background: #f6f8fa;
+  visibility: hidden;
+}
+.page .current .receipts .stacks .receipt .view:hover .active {
+  visibility: visible;
+}
+.page .current .receipts .stacks .receipt:hover .view {
+  visibility: visible;
+}
+.page .current .receipts .stacks .weeks {
+  display: flex;
+  width: 100%;
+  height: 48px;
+  margin: 4px;
+  background: #fff;
+  border-radius: 8px;
+}
+.page .current .receipts .stacks .weeks .day .graph {
+  width: 48px;
+  height: 48px;
+  margin: 0px 4px;
+  display: flex;
+  position: relative;
+}
+.page .current .receipts .stacks .weeks .day .graph .icon {
+  width: 24px;
+  height: 24px;
+  margin: auto;
+}
+.page .current .receipts .stacks .weeks .day .icon {
+  display: flex;
+}
+.page .current .receipts .stacks .weeks .day p {
+  text-align: center;
+  margin: auto;
+}
+.page .current .receipts .stacks .weeks .day .active {
+  display: flex;
+  height: 40px;
+  width: 40px;
+  margin: -44px 8px 8px 8px;
+  border-radius: 8px;
+  background: #fff;
+  z-index: -1;
+  background: #f6f8fa;
+}
+.page .current .receipts .stacks .weeks .first .graph {
+  width: 48px;
+  height: 48px;
+  margin: 0px 4px 0px 0px;
+  display: flex;
+  position: relative;
+}
+.page .current .receipts .stacks .weeks .first .graph .icon {
+  width: 24px;
+  height: 24px;
+  margin: auto;
+}
+.page .current .receipts .stacks .weeks .first .icon {
+  display: flex;
+}
+.page .current .receipts .stacks .weeks .first p {
+  text-align: center;
+  margin: auto;
+}
+.page .current .receipts .stacks .weeks .first .active {
+  display: flex;
+  height: 40px;
+  width: 40px;
+  margin: -44px 8px 8px 4px;
+  border-radius: 8px;
+  background: #fff;
+  z-index: -1;
+  background: #f6f8fa;
+}
+.page html {
+  font-family: "Roboto", sans-serif;
+  color: #8D8D8D;
+}
+.page .account {
+  width: 100%;
+  margin: 48px auto 0px;
+}
+.page .account .cover {
+  width: 100%;
+  height: 280px;
+}
+.page .account .cover .picture {
+  width: 100%;
+  height: 100%;
+}
+.page .account .cover .update .graph {
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  right: 0px;
+  margin: 0px 20px;
+  display: flex;
+}
+.page .account .cover .update .graph .icon {
+  width: 32px;
+  height: 32px;
+  margin: 4px;
+}
+.page .account .profile {
+  width: 160px;
+  height: 160px;
+  margin: -120px auto 0px;
+}
+.page .account .profile .picture {
+  width: 148px;
+  height: 148px;
+  border-radius: 100%;
+  border: solid 6px white;
+}
+.page .account .profile .update .graph {
+  width: 48px;
+  height: 48px;
+  margin: 0px auto;
+  display: flex;
+  position: false;
+}
+.page .account .profile .update .graph .icon {
+  width: 32px;
+  height: 32px;
+  margin: 4px;
+}
+.page .account .user {
+  width: 480px;
+  margin: 0 auto;
+}
+.page .account .user .name {
+  width: 100%;
+  height: 48px;
+  display: flex;
+}
+.page .account .user .name p {
+  margin: auto auto;
+  font-size: 32px;
+  font-weight: bolder;
+  color: #000;
+}
+.page .account .user .username {
+  width: 100%;
+  height: 48px;
+  display: flex;
+}
+.page .account .user .username p {
+  width: auto;
+  margin: auto auto;
+  font-size: 18px;
+  font-weight: bolder;
+}
+.page .account .user .details {
+  display: grid;
+}
+.page .account .user .details .stats {
+  display: flex;
+}
+.page .account .user .details .stats .posts {
+  width: 160px;
+  height: 48px;
+  position: relative;
+  display: flex;
+}
+.page .account .user .details .stats .posts p {
+  width: auto;
+  margin: auto auto;
+  font-size: 18px;
+  font-weight: bolder;
+}
+.page .account .user .details .stats .follower {
+  width: 160px;
+  height: 48px;
+  position: relative;
+  display: flex;
+}
+.page .account .user .details .stats .follower p {
+  width: auto;
+  margin: auto auto;
+  font-size: 18px;
+  font-weight: bolder;
+}
+.page .account .user .details .stats .following {
+  width: 160px;
+  height: 48px;
+  display: flex;
+}
+.page .account .user .details .stats .following p {
+  width: auto;
+  margin: auto auto;
+  font-size: 18px;
+  font-weight: bolder;
+}
+.page .account .user .menu {
+  display: flex;
+}
+.page .account .user .menu .posts {
+  display: inline-block;
+}
+.page .account .user .menu .posts .graph {
+  width: 48px;
+  height: 48px;
+  margin: 0px 16px;
+  display: flex;
+  position: false;
+}
+.page .account .user .menu .posts .graph .icon {
+  width: 24px;
+  height: 24px;
+  margin: 8px;
+}
+.page .account .user .menu .posts active {
+  display: flex;
+  width: 80px;
+  height: 4px;
+  background: #2e2e2e;
+  margin: 0px;
+}
+.page .account .user .menu .about {
+  display: inline-block;
+}
+.page .account .user .menu .about .graph .icon {
+  width: 0px 16px;
+  height: 0px 16px;
+  margin: 24px;
+}
+.page .account .user .menu .about .graph .icon:hover {
+  width: 60px;
+  height: 60px;
+  margin: -10px;
+}
+.page .account .user .menu .about active {
+  display: flex;
+  width: 80px;
+  height: 4px;
+  background: #2e2e2e;
+  margin: 0px;
+}
+.page .account .user .menu .follower {
+  display: inline-block;
+}
+.page .account .user .menu .follower .graph {
+  width: 48px;
+  height: 48px;
+  margin: 0px 16px;
+  display: flex;
+  position: false;
+}
+.page .account .user .menu .follower .graph .icon {
+  width: 24px;
+  height: 24px;
+  margin: 8px;
+}
+.page .account .user .menu .follower active {
+  display: flex;
+  width: 80px;
+  height: 4px;
+  background: #2e2e2e;
+  margin: 0px;
+}
+.page .account .user .menu .following {
+  display: inline-block;
+}
+.page .account .user .menu .following .graph {
+  width: 48px;
+  height: 48px;
+  margin: 0px 16px;
+  display: flex;
+  position: false;
+}
+.page .account .user .menu .following .graph .icon {
+  width: 24px;
+  height: 24px;
+  margin: 8px;
+}
+.page .account .user .menu .following active {
+  display: flex;
+  width: 80px;
+  height: 4px;
+  background: #2e2e2e;
+  margin: 0px;
+}
+.page .account .user .menu .archive {
+  display: inline-block;
+}
+.page .account .user .menu .archive .graph {
+  width: 48px;
+  height: 48px;
+  margin: 0px 16px;
+  display: flex;
+  position: false;
+}
+.page .account .user .menu .archive .graph .icon {
+  width: 24px;
+  height: 24px;
+  margin: 8px;
+}
+.page .account .user .menu .archive active {
+  display: flex;
+  width: 80px;
+  height: 4px;
+  background: #2e2e2e;
+  margin: 0px;
+}
+.page .account .user .menu .saved {
+  display: inline-block;
+}
+.page .account .user .menu .saved .graph {
+  width: 48px;
+  height: 48px;
+  margin: 0px 16px;
+  display: flex;
+  position: false;
+}
+.page .account .user .menu .saved .graph .icon {
+  width: 24px;
+  height: 24px;
+  margin: 8px;
+}
+.page .account .user .menu .saved active {
+  display: flex;
+  width: 80px;
+  height: 4px;
+  background: #2e2e2e;
+  margin: 0px;
+}
+.page html {
+  font-family: "Roboto", sans-serif;
+  color: #8D8D8D;
+}
+.page #search {
+  width: 840px;
+  margin-left: 30px;
+}
+.page #search .find {
+  width: 840px;
+  height: 56px;
+  margin: auto;
+  display: flex;
+  position: relative;
+}
+.page #search .find .close {
+  height: 56px;
+  width: 56px;
+  position: relative;
+  z-index: 1;
+}
+.page #search .find .close .graph {
+  width: 40px;
+  height: 40px;
+  margin: 8px;
+  display: flex;
+  position: absolute;
+}
+.page #search .find .close .graph .icon {
+  width: 20px;
+  height: 20px;
+  margin: auto;
+}
+.page #search .find .close active {
+  display: flex;
+  height: 40px;
+  width: 40px;
+  margin: 8px;
+  border-radius: 8px;
+  background: #fff;
+  z-index: -1;
+}
+.page #search .find input {
+  position: absolute;
+  width: 724px;
+  height: 48px;
+  padding: 0px 52px 0px 56px;
+  margin: 4px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.page #search .find input:active, .page #search .find input:focus {
+  outline: none;
+}
+.page #search .find .go {
+  height: 56px;
+  width: 56px;
+  position: absolute;
+  right: 0px;
+  z-index: 1;
+}
+.page #search .find .go .graph {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  right: 0px;
+  margin: 8px;
+  display: flex;
+}
+.page #search .find .go .graph .icon {
+  width: 16px;
+  height: 16px;
+  margin: auto;
+}
+.page #search .find .go active {
+  display: flex;
+  height: 40px;
+  width: 40px;
+  margin: 8px;
+  border-radius: 8px;
+  background: #fff;
+  z-index: -1;
+}
+.page #search .autocomplete {
+  width: 840px;
+  margin: auto;
+}
+.page #search .autocomplete .history {
+  width: 840px;
+  height: 56px;
+  display: flex;
+}
+.page #search .autocomplete .history .stack {
+  width: 832px;
+  height: 48px;
+  display: flex;
+  background: #ffffff;
+  border-radius: 8px;
+  margin: 4px;
+  position: relative;
+}
+.page #search .autocomplete .history .stack .graph {
+  width: 40px;
+  height: 40px;
+  margin: 4px;
+  display: flex;
+  position: relative;
+}
+.page #search .autocomplete .history .stack .graph .icon {
+  width: 16px;
+  height: 16px;
+  margin: auto;
+}
+.page #search .autocomplete .history .stack .data p {
+  font-size: 14px;
+  font-weight: 400;
+  margin-left: 8px;
+  cursor: default;
+}
+.page #search .autocomplete .history .stack .remove {
+  height: 56px;
+  width: 56px;
+  position: absolute;
+  visibility: hidden;
+  right: 0px;
+  z-index: 1;
+}
+.page #search .autocomplete .history .stack .remove .graph {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  right: 0px;
+  margin: 4px;
+  display: flex;
+}
+.page #search .autocomplete .history .stack .remove .graph .icon {
+  width: 16px;
+  height: 16px;
+  margin: auto;
+}
+.page #search .autocomplete .history .stack .remove active {
+  display: flex;
+  height: 40px;
+  width: 40px;
+  margin: 8px;
+  border-radius: 8px;
+  background: #fff;
+  z-index: -1;
+}
+.page #search .autocomplete .history .stack .go {
+  height: 56px;
+  width: 56px;
+  position: absolute;
+  visibility: hidden;
+  right: 0px;
+  z-index: 1;
+}
+.page #search .autocomplete .history .stack .go .graph {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  right: 0px;
+  margin: 4px;
+  display: flex;
+}
+.page #search .autocomplete .history .stack .go .graph .icon {
+  width: 16px;
+  height: 16px;
+  margin: auto;
+}
+.page #search .autocomplete .history .stack .go active {
+  display: flex;
+  height: 40px;
+  width: 40px;
+  margin: 8px;
+  border-radius: 8px;
+  background: #fff;
+  z-index: -1;
+}
+.page #search .autocomplete .history:hover .stack .remove {
+  visibility: visible;
+}
+.page #search .autocomplete .history:hover .stack .go {
+  visibility: visible;
+}
+.page #search .autocomplete .suggestion {
+  width: 840px;
+  height: 56px;
+  display: flex;
+}
+.page #search .autocomplete .suggestion .stack {
+  width: 832px;
+  height: 48px;
+  display: flex;
+  background: #ffffff;
+  border-radius: 8px;
+  margin: 4px;
+  position: relative;
+}
+.page #search .autocomplete .suggestion .stack .graph {
+  width: 40px;
+  height: 40px;
+  margin: 4px;
+  display: flex;
+  position: relative;
+}
+.page #search .autocomplete .suggestion .stack .graph .icon {
+  width: 16px;
+  height: 16px;
+  margin: auto;
+}
+.page #search .autocomplete .suggestion .stack .data p {
+  font-size: 14px;
+  font-weight: 400;
+  margin-left: 8px;
+  cursor: default;
+}
+.page #search .autocomplete .suggestion .stack .remove {
+  height: 56px;
+  width: 56px;
+  position: absolute;
+  visibility: hidden;
+  right: 0px;
+  z-index: 1;
+}
+.page #search .autocomplete .suggestion .stack .remove .graph {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  right: 0px;
+  margin: 4px;
+  display: flex;
+}
+.page #search .autocomplete .suggestion .stack .remove .graph .icon {
+  width: 16px;
+  height: 16px;
+  margin: auto;
+}
+.page #search .autocomplete .suggestion .stack .remove active {
+  display: flex;
+  height: 40px;
+  width: 40px;
+  margin: 8px;
+  border-radius: 8px;
+  background: #fff;
+  z-index: -1;
+}
+.page #search .autocomplete .suggestion .stack .go {
+  height: 56px;
+  width: 56px;
+  position: absolute;
+  visibility: hidden;
+  right: 0px;
+  z-index: 1;
+}
+.page #search .autocomplete .suggestion .stack .go .graph {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  right: 0px;
+  margin: 4px;
+  display: flex;
+}
+.page #search .autocomplete .suggestion .stack .go .graph .icon {
+  width: 16px;
+  height: 16px;
+  margin: auto;
+}
+.page #search .autocomplete .suggestion .stack .go active {
+  display: flex;
+  height: 40px;
+  width: 40px;
+  margin: 8px;
+  border-radius: 8px;
+  background: #fff;
+  z-index: -1;
+}
+.page #search .autocomplete .suggestion:hover .stack .remove {
+  visibility: visible;
+}
+.page #search .autocomplete .suggestion:hover .stack .go {
+  visibility: visible;
+}
+
+html {
+  font-family: "Roboto", sans-serif;
+  color: #8D8D8D;
+}
+
+/* =======================================================
+
+#   Remove { Border Radius } use case and testing perpose 
+
+======================================================= */
+body {
+  margin: 0px;
+}
+
+.container-v02 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: #ffffff;
+}
+.container-v02 .stacks {
+  display: flex;
+}
+.container-v02 .stacks .info {
+  width: calc(100% - 608px);
+  height: 100%;
+}
+.container-v02 .stacks .info .logo {
+  width: 100%;
+  height: 56px;
+  margin: 216px auto auto;
+  display: flex;
+}
+.container-v02 .stacks .info .logo .graph {
+  width: 48px;
+  height: 48px;
+  margin: auto;
+  display: flex;
+  position: relative;
+}
+.container-v02 .stacks .info .logo .graph .icon {
+  width: 48px;
+  height: 48px;
+  margin: auto;
+}
+.container-v02 .stacks .info .title {
+  width: 100%;
+  height: 56px;
+  margin-top: 56px;
+  display: flex;
+}
+.container-v02 .stacks .info .title .stack {
+  width: fit-content;
+  height: 48px;
+  margin: auto;
+  display: flex;
+}
+.container-v02 .stacks .info .title .stack p {
+  margin: auto;
+  font-size: 24px;
+  font-weight: 600;
+}
+.container-v02 .stacks .info .subtitle {
+  width: 100%;
+  height: 56px;
+  display: flex;
+}
+.container-v02 .stacks .info .subtitle .stack {
+  width: fit-content;
+  height: 48px;
+  margin: auto;
+  display: flex;
+}
+.container-v02 .stacks .info .subtitle .stack p {
+  margin: auto;
+  font-size: 18px;
+  font-weight: 600;
+}
+.container-v02 .stacks .signup {
+  width: 560px;
+  height: 560px;
+  border-radius: 16px;
+  background: #f6f8fa;
+  position: absolute;
+  right: 48px;
+  top: 48px;
+}
+.container-v02 .stacks .signup .form {
+  width: 448px;
+  height: 448px;
+  margin: 56px;
+}
+.container-v02 .stacks .signup .form .title {
+  width: 448px;
+  height: 56px;
+}
+.container-v02 .stacks .signup .form .title .stack {
+  width: 440px;
+  height: 48px;
+  margin: 4px;
+  display: flex;
+}
+.container-v02 .stacks .signup .form .title .stack p {
+  margin: auto;
+  font-size: 24px;
+  font-weight: 600;
+}
+.container-v02 .stacks .signup .form .subtitle {
+  width: 224px;
+  height: 56px;
+}
+.container-v02 .stacks .signup .form .fields {
+  width: auto;
+  height: auto;
+  margin: 56px auto auto auto;
+}
+.container-v02 .stacks .signup .form .fields .firstname {
+  width: 224px;
+  height: 56px;
+  background: #f6f8fa;
+}
+.container-v02 .stacks .signup .form .fields .firstname .field {
+  width: 216px;
+  height: 48px;
+  position: relative;
+  background: #ffffff;
+  border-radius: 8px;
+  margin: 4px;
+}
+.container-v02 .stacks .signup .form .fields .firstname .field input, .container-v02 .stacks .signup .form .fields .firstname .field textarea {
+  position: absolute;
+  width: 200px;
+  height: 40px;
+  padding: 0px 0px 0px 8px;
+  margin: 4px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.container-v02 .stacks .signup .form .fields .firstname .field input:active, .container-v02 .stacks .signup .form .fields .firstname .field input:focus, .container-v02 .stacks .signup .form .fields .firstname .field textarea:active, .container-v02 .stacks .signup .form .fields .firstname .field textarea:focus {
+  outline: none;
+}
+.container-v02 .stacks .signup .form .fields .firstname .field .label {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: absolute;
+  pointer-events: none;
+}
+.container-v02 .stacks .signup .form .fields .firstname .field .label .tag {
+  margin: auto auto auto 8px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+.container-v02 .stacks .signup .form .fields .firstname .field input:focus + .label .tag,
+.container-v02 .stacks .signup .form .fields .firstname .field input:valid + .label .tag {
+  transform: translateY(-100%);
+  color: #000;
+  padding: 1px 4px 2px;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  background: #ffffff;
+  font-size: 10px;
+}
+.container-v02 .stacks .signup .form .fields .firstname .field input:focus, .container-v02 .stacks .signup .form .fields .firstname .field input:valid, .container-v02 .stacks .signup .form .fields .firstname .field input:active {
+  background: #f6f8fa;
+}
+.container-v02 .stacks .signup .form .fields .surname {
+  width: 224px;
+  height: 56px;
+  background: #f6f8fa;
+}
+.container-v02 .stacks .signup .form .fields .surname .field {
+  width: 216px;
+  height: 48px;
+  background: #ffffff;
+  border-radius: 8px;
+  position: relative;
+  margin: 4px;
+}
+.container-v02 .stacks .signup .form .fields .surname .field input {
+  position: absolute;
+  width: 200px;
+  height: 40px;
+  padding: 0px 0px 0px 8px;
+  margin: 4px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.container-v02 .stacks .signup .form .fields .surname .field input:active, .container-v02 .stacks .signup .form .fields .surname .field input:focus {
+  outline: none;
+}
+.container-v02 .stacks .signup .form .fields .surname .field .label {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: absolute;
+  pointer-events: none;
+}
+.container-v02 .stacks .signup .form .fields .surname .field .label .tag {
+  margin: auto auto auto 8px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+.container-v02 .stacks .signup .form .fields .surname .field input:focus + .label .tag,
+.container-v02 .stacks .signup .form .fields .surname .field input:valid + .label .tag {
+  transform: translateY(-100%);
+  color: #000;
+  padding: 1px 4px 2px;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  background: #ffffff;
+  font-size: 10px;
+}
+.container-v02 .stacks .signup .form .fields .surname .field input:focus, .container-v02 .stacks .signup .form .fields .surname .field input:valid, .container-v02 .stacks .signup .form .fields .surname .field input:active {
+  background: #f6f8fa;
+}
+.container-v02 .stacks .signup .form .fields .email {
+  width: 224px;
+  height: 56px;
+  background: #f6f8fa;
+}
+.container-v02 .stacks .signup .form .fields .email .field {
+  width: 216px;
+  height: 48px;
+  background: #ffffff;
+  border-radius: 8px;
+  position: relative;
+  margin: 4px;
+}
+.container-v02 .stacks .signup .form .fields .email .field input {
+  position: absolute;
+  width: 200px;
+  height: 40px;
+  padding: 0px 0px 0px 8px;
+  margin: 4px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.container-v02 .stacks .signup .form .fields .email .field input:active, .container-v02 .stacks .signup .form .fields .email .field input:focus {
+  outline: none;
+}
+.container-v02 .stacks .signup .form .fields .email .field .label {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: absolute;
+  pointer-events: none;
+}
+.container-v02 .stacks .signup .form .fields .email .field .label .tag {
+  margin: auto auto auto 8px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+.container-v02 .stacks .signup .form .fields .email .field input:focus + .label .tag,
+.container-v02 .stacks .signup .form .fields .email .field input:valid + .label .tag {
+  transform: translateY(-100%);
+  color: #000;
+  padding: 1px 4px 2px;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  background: #ffffff;
+  font-size: 10px;
+}
+.container-v02 .stacks .signup .form .fields .email .field input:focus, .container-v02 .stacks .signup .form .fields .email .field input:valid, .container-v02 .stacks .signup .form .fields .email .field input:active {
+  background: #f6f8fa;
+}
+.container-v02 .stacks .signup .form .fields .username {
+  width: 224px;
+  height: 56px;
+  background: #f6f8fa;
+}
+.container-v02 .stacks .signup .form .fields .username .field {
+  width: 216px;
+  height: 48px;
+  background: #ffffff;
+  border-radius: 8px;
+  position: relative;
+  margin: 4px;
+}
+.container-v02 .stacks .signup .form .fields .username .field input {
+  position: absolute;
+  width: 200px;
+  height: 40px;
+  padding: 0px 0px 0px 8px;
+  margin: 4px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.container-v02 .stacks .signup .form .fields .username .field input:active, .container-v02 .stacks .signup .form .fields .username .field input:focus {
+  outline: none;
+}
+.container-v02 .stacks .signup .form .fields .username .field .label {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: absolute;
+  pointer-events: none;
+}
+.container-v02 .stacks .signup .form .fields .username .field .label .tag {
+  margin: auto auto auto 8px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+.container-v02 .stacks .signup .form .fields .username .field input:focus + .label .tag,
+.container-v02 .stacks .signup .form .fields .username .field input:valid + .label .tag {
+  transform: translateY(-100%);
+  color: #000;
+  padding: 1px 4px 2px;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  background: #ffffff;
+  font-size: 10px;
+}
+.container-v02 .stacks .signup .form .fields .username .field input:focus, .container-v02 .stacks .signup .form .fields .username .field input:valid, .container-v02 .stacks .signup .form .fields .username .field input:active {
+  background: #f6f8fa;
+}
+.container-v02 .stacks .signup .form .fields .password {
+  width: 224px;
+  height: 56px;
+  background: #f6f8fa;
+}
+.container-v02 .stacks .signup .form .fields .password .field {
+  width: 216px;
+  height: 48px;
+  background: #ffffff;
+  border-radius: 8px;
+  position: relative;
+  margin: 4px;
+}
+.container-v02 .stacks .signup .form .fields .password .field input {
+  position: absolute;
+  width: 200px;
+  height: 40px;
+  padding: 0px 0px 0px 8px;
+  margin: 4px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.container-v02 .stacks .signup .form .fields .password .field input:active, .container-v02 .stacks .signup .form .fields .password .field input:focus {
+  outline: none;
+}
+.container-v02 .stacks .signup .form .fields .password .field .label {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: absolute;
+  pointer-events: none;
+}
+.container-v02 .stacks .signup .form .fields .password .field .label .tag {
+  margin: auto auto auto 8px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+.container-v02 .stacks .signup .form .fields .password .field input:focus + .label .tag,
+.container-v02 .stacks .signup .form .fields .password .field input:valid + .label .tag {
+  transform: translateY(-100%);
+  color: #000;
+  padding: 1px 4px 2px;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  background: #ffffff;
+  font-size: 10px;
+}
+.container-v02 .stacks .signup .form .fields .password .field input:focus, .container-v02 .stacks .signup .form .fields .password .field input:valid, .container-v02 .stacks .signup .form .fields .password .field input:active {
+  background: #f6f8fa;
+}
+.container-v02 .stacks .signup .form .fields .confirm {
+  width: 224px;
+  height: 56px;
+  background: #f6f8fa;
+}
+.container-v02 .stacks .signup .form .fields .confirm .field {
+  width: 216px;
+  height: 48px;
+  background: #ffffff;
+  border-radius: 8px;
+  position: relative;
+  margin: 4px;
+}
+.container-v02 .stacks .signup .form .fields .confirm .field input {
+  position: absolute;
+  width: 200px;
+  height: 40px;
+  padding: 0px 0px 0px 8px;
+  margin: 4px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.container-v02 .stacks .signup .form .fields .confirm .field input:active, .container-v02 .stacks .signup .form .fields .confirm .field input:focus {
+  outline: none;
+}
+.container-v02 .stacks .signup .form .fields .confirm .field .label {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: absolute;
+  pointer-events: none;
+}
+.container-v02 .stacks .signup .form .fields .confirm .field .label .tag {
+  margin: auto auto auto 8px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+.container-v02 .stacks .signup .form .fields .confirm .field input:focus + .label .tag,
+.container-v02 .stacks .signup .form .fields .confirm .field input:valid + .label .tag {
+  transform: translateY(-100%);
+  color: #000;
+  padding: 1px 4px 2px;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  background: #ffffff;
+  font-size: 10px;
+}
+.container-v02 .stacks .signup .form .fields .confirm .field input:focus, .container-v02 .stacks .signup .form .fields .confirm .field input:valid, .container-v02 .stacks .signup .form .fields .confirm .field input:active {
+  background: #f6f8fa;
+}
+.container-v02 .stacks .signup .form .fields .birthdate {
+  width: 224px;
+  height: 56px;
+  position: absolute;
+  display: flex;
+  background: #f6f8fa;
+}
+.container-v02 .stacks .signup .form .fields .birthdate .field {
+  width: 160px;
+  height: 48px;
+  background: #ffffff;
+  border-radius: 8px;
+  position: relative;
+  margin: 4px;
+}
+.container-v02 .stacks .signup .form .fields .birthdate .field input {
+  position: absolute;
+  width: 144px;
+  height: 40px;
+  padding: 0px 0px 0px 8px;
+  margin: 4px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.container-v02 .stacks .signup .form .fields .birthdate .field input:active, .container-v02 .stacks .signup .form .fields .birthdate .field input:focus {
+  outline: none;
+}
+.container-v02 .stacks .signup .form .fields .birthdate .field .label {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: absolute;
+  pointer-events: none;
+}
+.container-v02 .stacks .signup .form .fields .birthdate .field .label .tag {
+  margin: auto auto auto 8px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+.container-v02 .stacks .signup .form .fields .birthdate .field input:focus + .label .tag,
+.container-v02 .stacks .signup .form .fields .birthdate .field input:valid + .label .tag {
+  transform: translateY(-100%);
+  color: #000;
+  padding: 1px 4px 2px;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  background: #ffffff;
+  font-size: 10px;
+}
+.container-v02 .stacks .signup .form .fields .birthdate .field input:focus, .container-v02 .stacks .signup .form .fields .birthdate .field input:valid, .container-v02 .stacks .signup .form .fields .birthdate .field input:active {
+  background: #f6f8fa;
+}
+.container-v02 .stacks .signup .form .fields .birthdate .calandar {
+  width: 56px;
+  height: 56px;
+}
+.container-v02 .stacks .signup .form .fields .birthdate .calandar .graph {
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  right: 0px;
+  margin: auto;
+  display: flex;
+  margin: 4px;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #000;
+  z-index: 1;
+}
+.container-v02 .stacks .signup .form .fields .birthdate .calandar .graph .icon {
+  width: 18px;
+  height: 18px;
+  margin: auto;
+}
+.container-v02 .stacks .signup .form .fields .gender {
+  width: 224px;
+  height: 56px;
+  position: absolute;
+  right: 56px;
+  display: flex;
+  background: #f6f8fa;
+}
+.container-v02 .stacks .signup .form .fields .gender .selector {
+  width: 112px;
+  height: 56px;
+  position: relative;
+}
+.container-v02 .stacks .signup .form .fields .gender .selector .stack {
+  width: 104px;
+  height: 48px;
+  margin: 4px;
+  background: #ffffff;
+  border-radius: 8px;
+  display: flex;
+}
+.container-v02 .stacks .signup .form .fields .gender .selector .stack p {
+  margin: auto auto auto 8px;
+  font-weight: 600;
+  font-size: 14px;
+}
+.container-v02 .stacks .signup .form .fields .gender .selector .stack .radio {
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  display: flex;
+  right: 4px;
+  margin: 0px 0px;
+}
+.container-v02 .stacks .signup .form .fields .gender .selector .stack .radio .selected {
+  width: 12px;
+  height: 12px;
+  margin: auto;
+  display: flex;
+  border: solid black 2px;
+  border-radius: 4px;
+}
+.container-v02 .stacks .signup .form .fields .gender .selector .stack .radio .selected active {
+  width: 8px;
+  height: 8px;
+  background: #000;
+  border-radius: 2px;
+  margin: auto;
+}
+.container-v02 .stacks .signup .form .fields .gender .selector .stack[active=false]:hover {
+  width: 96px;
+  height: 40px;
+  cursor: pointer;
+  border: solid #ffffff 4px;
+  background: #f6f8fa;
+}
+.container-v02 .stacks .signup .form .fields .gender .selector .stack[active=false]:hover p {
+  margin-left: 4px;
+}
+.container-v02 .stacks .signup .form .fields .gender .selector .stack[active=false]:hover .radio {
+  margin-top: -4px;
+}
+.container-v02 .stacks .signup .form .fields .login {
+  width: 224px;
+  height: 56px;
+}
+.container-v02 .stacks .signup .form .fields .login .stack {
+  width: 216px;
+  height: 48px;
+  margin: 4px;
+  display: flex;
+  background: #ffffff;
+  border-radius: 8px;
+  position: absolute;
+}
+.container-v02 .stacks .signup .form .fields .login .stack p {
+  margin: auto 8px auto;
+  font-size: 12px;
+}
+.container-v02 .stacks .signup .form .fields .login .stack b {
+  font-size: 14px;
+}
+.container-v02 .stacks .signup .form .fields .login .stack .graph {
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  right: 0px;
+  margin: auto;
+  display: flex;
+  color: #000;
+  z-index: 1;
+}
+.container-v02 .stacks .signup .form .fields .login .stack .graph .icon {
+  width: 24px;
+  height: 24px;
+  margin: auto;
+}
+.container-v02 .stacks .signup .form .fields .done {
+  width: 224px;
+  height: 56px;
+}
+.container-v02 .stacks .signup .form .fields .done .stack {
+  width: 216px;
+  height: 48px;
+  margin: 4px;
+  display: flex;
+  background: #ffffff;
+  border-radius: 8px;
+  position: absolute;
+}
+.container-v02 .stacks .signup .form .fields .done .stack p {
+  margin: auto 8px auto;
+  font-size: 12px;
+}
+.container-v02 .stacks .signup .form .fields .done .stack b {
+  font-size: 14px;
+}
+.container-v02 .stacks .signup .form .fields .done .stack .graph {
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  right: 0px;
+  margin: auto;
+  display: flex;
+  color: #000;
+  z-index: 1;
+}
+.container-v02 .stacks .signup .form .fields .done .stack .graph .icon {
+  width: 18px;
+  height: 18px;
+  margin: auto;
+}
+.container-v02 .stacks .signup .form .fields .fieldset {
+  display: flex;
+}
+.container-v02 .stacks .signup .form .fields .buttons {
+  position: absolute;
+  bottom: 56px;
+}
+.container-v02 .stacks .conditions {
+  width: 560px;
+  height: 56px;
+  display: flex;
+  position: absolute;
+  bottom: 0px;
+  right: 48px;
+}
+.container-v02 .stacks .conditions .terms {
+  font-size: 14px;
+  font-weight: 400;
+  height: 48px;
+  margin: auto auto;
+  display: flex;
+}
+.container-v02 .stacks .conditions .terms p {
+  margin: auto;
+}
+.container-v02 p {
+  margin: 0px;
+  color: #000;
+}
+
+/*# sourceMappingURL=ui.css.map */

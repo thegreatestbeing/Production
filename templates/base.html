@@ -1,0 +1,193 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{% static 'fonts/hash.png' %}" type="image/gif">
+    <!-- imports -->
+    <link rel="stylesheet" href="{% static 'css/ui.css' %}">
+	<link rel="stylesheet" href="{% static 'icons/icons.svg' %}">
+
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+	{% if user.is_authenticated %}
+		<nav id="navigation" class='navigation' role="navigation-bar">
+			<div class='menu nav'>
+				<div class='logo' role='button'>
+					<div class="graph">
+						<img src="{% static 'fonts/hash.png' %}" alt="" class="icon">
+					</div>
+				</div>
+				<div id="panel" class='actions panel'>
+					<!-- ======================================
+																	
+						# Center Notification & state Panel 
+										
+					======================================= -->
+					<div class='find' role="button">
+						<div class="graph" active='true'>
+							<div class="icon">
+								<svg class="icon" width="16" height="16" fill="currentColor">
+									<use xlink:href="{% static 'icons/icons.svg' %}#search"/>
+								</svg>					
+							</div>
+						</div>
+						<active class="active"/>
+					</div>
+			
+					<div class='home' role='button'>
+						<div class="graph" active='false'>
+							<div class="icon">
+								<svg class="icon" width="24" height="24" fill="currentColor">
+									<use xlink:href="{% static 'icons/icons.svg' %}#grid"/>
+								</svg>
+							</div>
+						</div>
+					</div>
+
+					<div class='receipts' role='button'>
+						<div class="graph" active='false'>
+							<div class="icon">
+								<svg class="icon" width="16" height="16" fill="currentColor">
+									<use xlink:href="{% static 'icons/icons.svg' %}#upc-scan"/>
+								</svg>
+							</div>
+							
+							<input class="receiver" style="display: none;" type="text" autofocus>
+						</div>
+					</div>
+
+					<div class='sales' role='button'>
+						<div class="graph" active='false'>
+							<div class="icon">
+								<svg class="icon" width="24" height="24" fill="currentColor">
+									<use xlink:href="{% static 'icons/icons.svg' %}#clipboard-data"/>
+								</svg>
+							</div>
+						</div>
+					</div>
+
+					<div class='products' role='button' >
+						<div class="graph" active='false'>
+							<div class="icon">
+								<svg class="icon" width="24" height="24" fill="currentColor">
+									<use xlink:href="{% static 'icons/icons.svg' %}#box-seam"/>
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class='employees' role='button'>
+						<div class="graph" active='false'>
+							<div class="icon">
+								<svg class="icon" width="24" height="24" fill="currentColor">
+									<use xlink:href="{% static 'icons/icons.svg' %}#person-badge"/>
+								</svg>
+							</div>
+						</div>
+					</div>
+					
+					<div class='settings' role='button'>
+						<div class="graph" active='false'>
+							<div class="icon">
+								<svg class="icon" width="24" height="24" fill="currentColor">
+									<use xlink:href="{% static 'icons/icons.svg' %}#gear"/>
+								</svg>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class='logout' role='logout'>
+					<div class="graph" active='false'>
+						<!-- User profile picture icon  -->
+						<div class="icon">
+							<svg class="icon" width="16" height="16" fill="currentColor">
+								<use xlink:href="{% static 'icons/icons.svg' %}#box-arrow-left"/>
+							</svg>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</nav>
+
+		<nav id="header" class="header nav">
+			<div class="title"> 
+				<div class="location">
+					<div class="graph" active='false'>
+						<svg class="icon" width="16" height="16" fill="currentColor">
+							<use xlink:href="{% static 'icons/icons.svg' %}#geo"/>
+						</svg>
+					</div>
+				</div>
+				<div class="heading">
+					<p>Nike Store</p>
+					<span class="address">Khedbrahma, Guj.</span>
+				</div>
+			</div>
+
+			<div class='notifications' role='button'>
+				<div class="graph" active='false'>
+					<svg class="icon" width="16" height="16" fill="currentColor">
+						<use xlink:href="{% static 'icons/icons.svg' %}#bell"/>
+					</svg>
+				</div>
+			</div>
+
+			<div class='profile' role='button'>
+				<div class="graph" active='true'>
+					<!-- User profile picture icon  -->
+					<img src="{% static 'media/images/profile/Betty@2x.png' %}" alt=""  class="icon">
+				</div>
+				<active class="active"></active>
+			</div>
+		</nav>
+	{% endif %}
+	{% block content %}
+	{% endblock %}
+
+
+	<script type="text/javascript" src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+    {% if user.is_authenticated %}
+		<script type="text/javascript" src="{% static 'js/ui.js' %}"></script>
+
+	{% endif %}
+	<script type="text/javascript">
+		// using jQuery
+			function getCookie(name) {
+			    var cookieValue = null;
+			    if (document.cookie && document.cookie !== '') {
+			        var cookies = document.cookie.split(';');
+			        for (var i = 0; i < cookies.length; i++) {
+			            var cookie = jQuery.trim(cookies[i]);
+			            // Does this cookie string begin with the name we want?
+			            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+			                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+			                break;
+			            }
+			        }
+			    }
+			    return cookieValue;
+			}
+
+			var csrftoken = getCookie('csrftoken');
+
+			function csrfSafeMethod(method) {
+			    // these HTTP methods do not require CSRF protection
+			    return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+			}
+			$.ajaxSetup({
+			    beforeSend: function(xhr, settings) {
+			        if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+			            xhr.setRequestHeader("X-CSRFToken", csrftoken);
+			        }
+			    }
+			});
+	</script>
+    <!-- End Imports  -->
+	{% block scripts %}{% endblock %}
+</body>
+</html>
